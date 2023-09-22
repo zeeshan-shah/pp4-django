@@ -25,3 +25,17 @@ def menu_view(request):
     }
     
     return render(request, 'customer/menu.html', context)
+
+def customer_details_view(request):
+    if request.method == 'POST':
+        form = CustomerDetailsForm(request.POST)
+        if form.is_valid():
+            # Save the customer details to the database
+            customer = form.save(commit=False)
+            customer.user = request.user
+            customer.save()
+            return redirect('menu')  # Redirect to the menu page after saving details
+    else:
+        form = CustomerDetailsForm()
+    
+    return render(request, 'customer/customer_details_form.html', {'form': form})
