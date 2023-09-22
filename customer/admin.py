@@ -5,3 +5,10 @@ from .models import Customer, Dish, MealCategory, Order
 class CustomerAdmin(admin.ModelAdmin):
 
     list_display = ('name', 'email', 'city', 'state')
+
+@admin.register(Dish)
+class DishAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'categories', 'price')
+
+admin.site.register(MealCategory)
