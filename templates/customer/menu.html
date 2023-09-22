@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center menu-heading">Menu</h1>
+
+    <form method="post" action="{% url 'order' %}">
+    {% csrf_token %}
+
+        <!-- Starter Category -->
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="category-heading">Starter</h2>
+            </div>
+            <div id="carouselExampleControls" class="carousel">
+                <div class="carousel-inner">
+                    {% for dish in starter_dishes %}
+                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <input type="checkbox" name="selected_dishes" value="{{ dish.id }}" class="form-check-input">
+                                    </div>
+                                    <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">{{ dish.name }}</h3>
+                                        <p class="card-text d-none d-md-block">{{ dish.description }}</p>
+                                        <p class="card-text price">Price: ${{ dish.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Main Course Category -->
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="category-heading">Main Course</h2>
+            </div>
+            <div id="carouselExampleControls" class="carousel">
+                <div class="carousel-inner">
+                    {% for dish in main_course_dishes_dishes %}
+                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <input type="checkbox" name="selected_dishes" value="{{ dish.id }}" class="form-check-input">
+                                    </div>
+                                    <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">{{ dish.name }}</h3>
+                                        <p class="card-text d-none d-md-block">{{ dish.description }}</p>
+                                        <p class="card-text price">Price: ${{ dish.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dessert Category -->
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="category-heading">Dessert</h2>
+            </div>
+            <div id="carouselExampleControls" class="carousel">
+                <div class="carousel-inner">
+                    {% for dish in dessert_dishes %}
+                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <input type="checkbox" name="selected_dishes" value="{{ dish.id }}" class="form-check-input">
+                                    </div>
+                                    <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">{{ dish.name }}</h3>
+                                        <p class="card-text d-none d-md-block">{{ dish.description }}</p>
+                                        <p class="card-text price">Price: ${{ dish.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Drink Category -->
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <h2 class="category-heading">Drink</h2>
+            </div>
+            <div id="carouselExampleControls" class="carousel">
+                <div class="carousel-inner">
+                    {% for dish in drink_dishes %}
+                        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+                            <div class="card-container">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center">
+                                        <input type="checkbox" name="selected_dishes" value="{{ dish.id }}" class="form-check-input">
+                                    </div>
+                                    <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="card-img-top">
+                                    <div class="card-body text-center">
+                                        <h3 class="card-title">{{ dish.name }}</h3>
+                                        <p class="card-text d-none d-md-block">{{ dish.description }}</p>
+                                        <p class="card-text price">Price: ${{ dish.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="text-center mb-4">
+            <input type="submit" value="Place Order" class="btn btn-primary" id="custom-btn">
+        </div>  
+    </form>
+</div>
+
+{% endblock %}
