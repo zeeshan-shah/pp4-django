@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-zeeshanshah-pp4django-jxzidkjdzuz.ws-eu104.gitpod.io']
+ALLOWED_HOSTS = ['8000-zeeshanshah-pp4django-jxzidkjdzuz.ws-eu104.gitpod.io', 'https://pp4-django-43b291f3bcf7.herokuapp.com/']
 
 
 
