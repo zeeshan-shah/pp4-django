@@ -1,0 +1,270 @@
+
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Text styles */
+p, ul, ol, li {
+    font-family: 'Courgette', cursive;
+    font-weight: 400;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #0B0B0B;
+    color: #EEEBD0; /* Default text color */
+    font-family: Arial, sans-serif;
+}
+
+/* Style the navbar */
+.navbar {
+    background-color: #0B0B0B;
+    color: #EEEBD0;
+}
+
+/* Style the navbar brand link */
+.navbar-brand {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700; /* Bold */
+    --bs-navbar-brand-font-size: 35px;
+}
+
+/* Style the navigation links */
+.navbar-nav .nav-link {
+    color: #EEEBD0;
+    font-size: 20px;
+    transition: color 0.3s; /* Add a smooth color transition */
+}
+
+/* Style the active menu link */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: #CC2936;
+}
+
+/* Style the page content container */
+.container {
+    padding: 20px;
+}
+
+/* Style buttons */
+.btn {
+    background-color: #CC2936;
+    color: #EEEBD0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #EEEBD0;
+    color: #CC2936;
+}
+
+/* Style form inputs */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #EEEBD0;
+    border-radius: 5px;
+}
+
+/* Style form buttons */
+.form-btn {
+    background-color: #CC2936;
+    color: #EEEBD0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-btn:hover {
+    background-color: #EEEBD0;
+    color: #CC2936;
+}
+
+/* Style headings */
+h1,
+h2,
+h3 {
+    color: #CC2936;
+    font-weight: bold;
+}
+
+/* Style links */
+a {
+    color: #CC2936;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #EEEBD0;
+}
+
+/* Style images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style the menu heading */
+.menu-heading {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #DC143C;
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+
+/* Style the category heading */
+.category-heading {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-style: italic;
+    color: #FF6B6B;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* Style each menu item card */
+.card {
+    text-align: left;
+}
+
+/* Style the dish checkbox */
+.form-check-input {
+    transform: scale(1.5);
+}
+
+/* Style the dish image */
+.card-img-top {
+    object-fit: cover;
+    overflow: hidden; /* Hide overflowing content (if any) */
+    float: left; /* Image on the left side */
+    margin-right: 20px;
+}
+
+/* Style the dish title */
+.card-title {
+    font-family: 'Crimson Text', serif;
+    font-weight: 600;
+    font-size: 25px;
+    font-style: italic;
+    color: #0B0B0B;
+    margin-bottom: 5px;
+}
+
+/* Style the dish description */
+.card-text {
+    font-family: 'Courgette', cursive;
+    font-weight: 400;
+    font-size: 16px;
+    color: #0B0B0B;
+    margin: 0;
+}
+
+/* Style the dish price */
+.price {
+    font-family: 'Courgette', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    color: #CC2936;
+}
+
+/* Style for the custom button */
+#custom-btn {
+    background-color: #0B0B0B; /* Set the desired background color */
+    color: #EEEBD0; /* Set the desired text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#custom-btn:hover {
+    background-color: #CC2936; /* Change the background color on hover */
+    color: #EEEBD0; /* Change the text color on hover */
+}
+
+.card-container {
+    height: 100%;
+}
+
+.card {
+    height: 100%; /* Set a fixed height for the card */
+}
+
+.card img {
+    max-height: 100%; /* Ensure the image scales proportionally within the card */
+}
+
+.card-text {
+    flex-grow: 1; /* Allow text content to expand to fill available space */
+    padding: 10px; /* Add padding for spacing within the card */
+}
+
+.card-body {
+    flex: 0 auto;
+}
+
+.carousel-inner {
+    padding: 1em;
+  }
+  .card {
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #e1e1e1;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (min-width: 768px) {
+    .carousel-item {
+      margin-right: 0;
+      flex: 0 0 33.333333%;
+      display: block;
+    }
+    .carousel-inner {
+      display: flex;
+    }
+  }
+  .card .img-wrapper {
+      max-width: 100%;
+      height: 13em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .card img {
+      max-height: 100%;
+  }
+  @media (max-width: 767px) {
+    .card .img-wrapper {
+      height: 17em;
+    }
+  }
