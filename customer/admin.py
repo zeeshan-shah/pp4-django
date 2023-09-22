@@ -12,3 +12,8 @@ class DishAdmin(admin.ModelAdmin):
     list_display = ('name', 'categories', 'price')
 
 admin.site.register(MealCategory)
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+
+    list_display = ('name', 'total_price', 'city')
