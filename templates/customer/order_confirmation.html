@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Order Details</h1>
+  <h1>Order Confirmation</h1>
 
-  <h2>Selected Items:</h2>
+  <h2>Your Order Details:</h2>
   <ul>
     {% for dish in selected_dishes %}
       <li>{{ dish.name }} - ${{ dish.price }}</li>
@@ -11,8 +11,8 @@
   </ul>
 
   <h2>Customer Details for Delivery:</h2>
-  <p>Name: {{ order.name }}</p>
-  <p>Email: {{ order.email }}</p>
+  <p>Name: {{ order.name.name }}</p>
+  <p>Email: {{ order.name.email }}</p>
   <p>Street: {{ order.street }}</p>
   <p>City: {{ order.city }}</p>
   <p>State: {{ order.state }}</p>
@@ -20,9 +20,5 @@
 
   <h2>Total Price: ${{ order.total_price }}</h2>
   
-  <!-- Add a form for further actions (e.g., confirming the order) -->
-  <form method="post" action="{% url 'order-confirmation' %}">
-    {% csrf_token %}
-    <button type="submit">Confirm Order</button>
-  </form>
+
 {% endblock %}
