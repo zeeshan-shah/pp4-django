@@ -1,32 +1,45 @@
-var multipleCardCarousel = document.querySelector(
-    "#carouselExampleControls"
-  );
-  if (window.matchMedia("(min-width: 768px)").matches) {
-    var carousel = new bootstrap.Carousel(multipleCardCarousel, {
-      interval: false,
-    });
-    var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-    var cardWidth = $(".carousel-item").width();
-    var scrollPosition = 0;
-    $("#carouselExampleControls .carousel-control-next").on("click", function () {
-        console.log('next');
-      if (scrollPosition < carouselWidth - cardWidth * 4) {
-        scrollPosition += cardWidth;
-        $("#carouselExampleControls .carousel-inner").animate(
-          { scrollLeft: scrollPosition },
-          600
-        );
-      }
-    });
-    $("#carouselExampleControls .carousel-control-prev").on("click", function () {
-      if (scrollPosition > 0) {
-        scrollPosition -= cardWidth;
-        $("#carouselExampleControls .carousel-inner").animate(
-          { scrollLeft: scrollPosition },
-          600
-        );
-      }
-    });
-  } else {
-    $(multipleCardCarousel).addClass("slide");
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to initialize a carousel
+  function initializeCarousel(carouselId) {
+    var carouselElement = document.querySelector("#" + carouselId);
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      var carousel = new bootstrap.Carousel(carouselElement, {
+        interval: false,
+      });
+      var carouselWidth = carouselElement.querySelector(".carousel-inner")
+        .scrollWidth;
+      var cardWidth = carouselElement.querySelector(".carousel-item").clientWidth;
+      var scrollPosition = 0;
+      carouselElement
+        .querySelector(".carousel-control-next")
+        .addEventListener("click", function () {
+          if (scrollPosition < carouselWidth - cardWidth * 4) {
+            scrollPosition += cardWidth;
+            carouselElement.querySelector(".carousel-inner").scrollTo({
+              left: scrollPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      carouselElement
+        .querySelector(".carousel-control-prev")
+        .addEventListener("click", function () {
+          if (scrollPosition > 0) {
+            scrollPosition -= cardWidth;
+            carouselElement.querySelector(".carousel-inner").scrollTo({
+              left: scrollPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+    } else {
+      $(carouselElement).addClass("slide");
+    }
   }
+
+  // Initialize each carousel
+  initializeCarousel("carouselExampleControls");
+  initializeCarousel("carouselExampleControls1");
+  initializeCarousel("carouselExampleControls2");
+  initializeCarousel("carouselExampleControls3");
+});

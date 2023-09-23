@@ -21,7 +21,7 @@ class Customer(models.Model):
         return self.name
 
 class Dish(models.Model):
-    name = models.CharField(max_length=20, unique=True)
+    name = models.CharField(max_length=50, unique=True)
     description = models.TextField()
     image = CloudinaryField('image')
     price = models.DecimalField(max_digits=10, decimal_places=2)

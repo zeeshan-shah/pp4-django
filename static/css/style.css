@@ -161,6 +161,7 @@ img {
     overflow: hidden; /* Hide overflowing content (if any) */
     float: left; /* Image on the left side */
     margin-right: 20px;
+    height: 280px;
 }
 
 /* Style the dish title */
@@ -243,6 +244,7 @@ img {
     top: 50%;
     transform: translateY(-50%);
   }
+  
   @media (min-width: 768px) {
     .carousel-item {
       margin-right: 0;
