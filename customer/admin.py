@@ -8,7 +8,7 @@ class CustomerAdmin(admin.ModelAdmin):
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-
+    prepopulated_fields = {'slug': ('name',)}
     list_display = ('name', 'categories', 'price')
 
 admin.site.register(MealCategory)
