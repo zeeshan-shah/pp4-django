@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import Dish, Customer, Order
 from .forms import CustomerDetailsForm
@@ -27,6 +27,10 @@ def menu_view(request):
     }
     
     return render(request, 'customer/menu.html', context)
+
+def dish_detail_view(request, slug):
+    dish = get_object_or_404(Dish, slug=slug)
+    return render(request, 'customer/dish_detail.html', {'dish': dish})
 
 def customer_details_view(request):
     if request.method == 'POST':
