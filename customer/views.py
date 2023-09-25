@@ -5,6 +5,8 @@ from .forms import CustomerDetailsForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from decimal import Decimal
 
 def home(request):
     return render(request, 'customer/home.html')
@@ -37,20 +39,23 @@ def dish_detail_view(request, slug):
     dish = get_object_or_404(Dish, slug=slug)
     return render(request, 'customer/dish_detail.html', {'dish': dish})
 
+@login_required
 def customer_details_view(request):
+    # Check if the user already has customer details
+    customer = get_object_or_404(Customer, user=request.user)
+
     if request.method == 'POST':
-        form = CustomerDetailsForm(request.POST)
+        form = CustomerDetailsForm(request.POST, instance=customer)
         if form.is_valid():
-            # Save the customer details to the database
-            customer = form.save(commit=False)
-            customer.user = request.user
-            customer.save()
+            # Update the customer details in the database
+            form.save()
             return redirect('menu')  # Redirect to the menu page after saving details
     else:
-        form = CustomerDetailsForm()
+        form = CustomerDetailsForm(instance=customer)
     
     return render(request, 'customer/customer_details_form.html', {'form': form})
 
+@login_required
 def update_selected_dishes(request):
     if request.method == 'POST' and request.is_ajax():
         dish_id = request.POST.get('dish_id')
@@ -79,7 +84,40 @@ def update_selected_dishes(request):
             return JsonResponse({'success': True})
     
     return JsonResponse({'success': False})
+
+
+@login_required
+def delete_selected_dishes(request, dish_id):
+    # Retrieve the selected dish IDs from the session
+    order_details = request.session.get('order_details', {})
+    selected_dish_ids = order_details.get('selected_dishes', [])
+
+    # Check if the dish_id is in the selected_dish_ids list
+    if dish_id in selected_dish_ids:
+        # Remove the dish_id from the selected_dish_ids
+        selected_dish_ids.remove(dish_id)
+
+        # Calculate the updated total price
+        updated_total_price = calculate_total_price(selected_dish_ids)
+
+        # Update the selected_dishes and total_price in the session
+        order_details['selected_dishes'] = selected_dish_ids
+        order_details['total_price'] = updated_total_price
+        request.session['order_details'] = order_details
+        request.session.modified = True
+
+        return redirect('cart')  # Redirect to the 'cart' page
+
     
+def calculate_total_price(selected_dish_ids):
+    # Retrieve the selected dishes and their prices
+    selected_dishes = Dish.objects.filter(pk__in=selected_dish_ids)
+    
+    # Calculate the total price by summing the prices of selected dishes
+    total_price = sum(float(selected_dish.price) for selected_dish in selected_dishes)
+    
+    return total_price
+
 @login_required
 def order_view(request):
     if request.method == 'POST':
@@ -137,10 +175,7 @@ def order_view(request):
     
     return redirect('menu')
 
-from django.http import JsonResponse
-
-
-
+@login_required
 def cart_view(request):
     order_details = request.session.get('order_details')
     
@@ -191,7 +226,7 @@ def cart_view(request):
 
     return render(request, 'customer/order.html', context)
 
-
+@login_required
 def order_confirmation_view(request):
     # Retrieve the order details from the session
     order_details = request.session.get('order_details')

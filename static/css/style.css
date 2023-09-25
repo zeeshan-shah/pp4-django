@@ -295,6 +295,10 @@ img {
     color: #CC2936; /* Change the text color on hover */
 }
 
+.delivery-info {
+    font-size: 18px; /* Adjust the font size as needed */
+}
+
 .card-container {
     height: 100%;
 }

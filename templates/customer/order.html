@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <div class="container">
   <div class="row">
@@ -13,18 +13,25 @@
           <ul>
             {% for dish in selected_dishes %}
             <li>{{ dish.name }} - ${{ dish.price }}</li>
+            <form method="post" action="{% url 'delete_selected_dishes' dish.id %}">
+              {% csrf_token %}
+              <button type="submit">Remove</button>
+            </form>
             {% endfor %}
           </ul>
 
           <h4>Total Price: ${{ order.total_price }}</h4>
-          <a href="{% url 'menu' %}">
-            <button>Update Order</button>
-          </a>
-          <!-- Add a form for further actions (e.g., confirming the order) -->
-          <form method="post" action="{% url 'order-confirmation' %}">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary">Confirm Order</button>
-          </form>
+          <div class="row">
+            <div class="col-md-6">
+              <a href="{% url 'menu' %}" class="btn btn-primary btn-block">Update Order</a>
+            </div>
+            <div class="col-md-6">
+              <form method="post" action="{% url 'order-confirmation' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-success btn-block">Confirm Order</button>
+              </form>
+            </div>
+          </div>
         </div>
         {% else %}
         <div class="card-body">
@@ -35,18 +42,52 @@
     </div>
 
     <div class="col-md-6">
-      <div class="card">
+      <div class="card p-4"> <!-- Added padding -->
         <div class="card-body">
           <h1 class="card-title card-heading">Delivery Information</h1>
-          <p><strong>Name:</strong> {{ order.name }}</p>
-          <p><strong>Email:</strong> {{ order.email }}</p>
-          <p><strong>Street:</strong> {{ order.street }}</p>
-          <p><strong>City:</strong> {{ order.city }}</p>
-          <p><strong>State:</strong> {{ order.state }}</p>
-          <p><strong>Zipcode:</strong> {{ order.zipcode }}</p>
+          <!-- Apply custom CSS for larger text and center-aligned button -->
+          <p class="delivery-info"><strong>Name:</strong> {{ order.name }}</p>
+          <p class="delivery-info"><strong>Email:</strong> {{ order.email }}</p>
+          <p class="delivery-info"><strong>Street:</strong> {{ order.street }}</p>
+          <p class="delivery-info"><strong>City:</strong> {{ order.city }}</p>
+          <p class="delivery-info"><strong>State:</strong> {{ order.state }}</p>
+          <p class="delivery-info"><strong>Zipcode:</strong> {{ order.zipcode }}</p>
+          <div class="text-center">
+            <a href="{% url 'customer-details' %}" class="btn btn-info">Update Data</a> <!-- Center-aligned button -->
+          </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
+
+<script>
+  $(document).ready(function() {
+    // Add a click event handler for the "Remove" buttons
+    $(".remove-dish").click(function() {
+        var dishId = $(this).data("dish-id"); // Get the dish ID from the data attribute
+        var removeUrl = `/delete/${dishId}/`; // Construct the URL dynamically
+
+        // Send an AJAX POST request to remove the dish
+        $.ajax({
+            type: "POST",
+            url: removeUrl,
+            data: { csrfmiddlewaretoken: csrftoken }, // Include the CSRF token
+            dataType: "json",
+            success: function(response) {
+                if (response.success) {
+                    // If the removal was successful, update the order page
+                    console.log("Dish removed successfully!");
+                    // Reload or update the order page here
+                    location.reload(); // You can reload the page for simplicity
+                } else {
+                    console.log("Dish removal failed.");
+                }
+            },
+            error: function() {
+                console.log("Error occurred during dish removal.");
+            }
+        });
+    });
+});
+</script>
 {% endblock %}
