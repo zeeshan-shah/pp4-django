@@ -4,7 +4,7 @@ from .models import Dish, Customer, Order
 from .forms import CustomerDetailsForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-
+from django.http import JsonResponse
 
 def home(request):
     return render(request, 'customer/home.html')
@@ -19,14 +19,19 @@ def menu_view(request):
     dessert_dishes = dishes.filter(categories__name='Dessert')
     drink_dishes = dishes.filter(categories__name='Drink')
     
+    # Retrieve selected dish IDs from the session
+    selected_dish_ids = request.session.get('order_details', {}).get('selected_dishes', [])
+    
     context = {
         'starter_dishes': starter_dishes,
         'main_course_dishes': main_course_dishes,
         'dessert_dishes': dessert_dishes,
         'drink_dishes': drink_dishes,
+        'selected_dish_ids': selected_dish_ids,  # Include selected dish IDs in the context
     }
     
     return render(request, 'customer/menu.html', context)
+
 
 def dish_detail_view(request, slug):
     dish = get_object_or_404(Dish, slug=slug)
@@ -46,15 +51,43 @@ def customer_details_view(request):
     
     return render(request, 'customer/customer_details_form.html', {'form': form})
 
+def update_selected_dishes(request):
+    if request.method == 'POST' and request.is_ajax():
+        dish_id = request.POST.get('dish_id')
+        is_checked = request.POST.get('is_checked')
+        
+        if dish_id and is_checked in ['true', 'false']:
+            dish_id = int(dish_id)
+            is_checked = (is_checked == 'true')
+            
+            # Retrieve the selected dishes from the session
+            selected_dishes = request.session.get('order_details', {}).get('selected_dishes', [])
+            
+            if is_checked:
+                # If the checkbox is checked, add the dish to selected dishes
+                if dish_id not in selected_dishes:
+                    selected_dishes.append(dish_id)
+            else:
+                # If the checkbox is unchecked, remove the dish from selected dishes
+                if dish_id in selected_dishes:
+                    selected_dishes.remove(dish_id)
+            
+            # Update the selected dishes in the session
+            request.session['order_details']['selected_dishes'] = selected_dishes
+            request.session.modified = True  # Mark the session as modified
+            
+            return JsonResponse({'success': True})
+    
+    return JsonResponse({'success': False})
+    
 @login_required
 def order_view(request):
     if request.method == 'POST':
         selected_dish_ids = request.POST.getlist('selected_dishes')
         
-        if not selected_dish_ids:
-            # If no dishes are selected, display an error message
-            messages.error(request, "Please select at least one dish to place an order.")
-            return redirect('menu')  # Redirect back to the menu page
+        # if not selected_dish_ids:
+        #     # If no dishes are selected, display an error message
+        #     return redirect('cart')  # Redirect back to the menu page
         
         # Get the selected dishes
         selected_dishes = Dish.objects.filter(pk__in=selected_dish_ids)
@@ -104,7 +137,59 @@ def order_view(request):
     
     return redirect('menu')
 
+from django.http import JsonResponse
 
+
+
+def cart_view(request):
+    order_details = request.session.get('order_details')
+    
+    if not order_details or not order_details.get('selected_dishes'):
+
+        if request.user.is_authenticated:
+            # If the user is authenticated, retrieve their customer details from the database
+            try:
+                customer = request.user.customer  # one-to-one relationship between User and Customer
+            except Customer.DoesNotExist:
+                # Handle the case where the customer details don't exist for the user
+                return redirect('customer-details')  # Redirect to the customer details view
+            
+        request.session['order_details'] = {
+        'name': customer.name,
+        'email': customer.email,
+        'street': customer.street,
+        'city': customer.city,
+        'state': customer.state,
+        'zipcode': customer.zipcode}
+
+        context = {
+        'order': request.session['order_details'],  # Pass the order details
+        }
+        return render(request, 'customer/order.html', context)
+    
+    # Retrieve selected dishes
+    selected_dishes = Dish.objects.filter(pk__in=order_details['selected_dishes'])
+    
+    email = order_details['email']
+    
+    order = Order(
+        user=request.user,
+        name_id=order_details['customer_id'],
+        total_price=order_details['total_price'],
+        street=order_details['street'],
+        city=order_details['city'],
+        state=order_details['state'],
+        zipcode=order_details['zipcode'],
+    )
+
+    order.email = email
+
+    context = {
+        'order': order,
+        'selected_dishes': selected_dishes,
+    }
+
+    return render(request, 'customer/order.html', context)
 
 
 def order_confirmation_view(request):

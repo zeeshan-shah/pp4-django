@@ -251,6 +251,11 @@ img {
     font-style: italic;
     color: #0B0B0B;
     margin-bottom: 5px;
+    text-align: center;
+}
+
+.card-heading {
+    font-size: 30px;
 }
 
 /* Style the dish description */

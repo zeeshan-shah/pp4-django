@@ -20,7 +20,7 @@
                             <div class="card-container">
                                 <div class="card">
                                     <div class="card-body d-flex justify-content-center">
-                                        <input type="checkbox" name="selected_dishes" value="{{ dish.id }}" class="form-check-input">
+                                        <input type="checkbox" name="selected_dishes" value="{{ dish.id }}" class="form-check-input" {% if dish.id in selected_dish_ids %}checked{% endif %}>
                                     </div>
                                     <a href="{% url 'dish-detail' dish.slug %}">
                                     <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="card-img-top">
@@ -164,5 +164,31 @@
         </div>  
     </form>
 </div>
+
+<script>
+    // Function to update selected dishes in the session via AJAX
+    function updateSelectedDishes(dishId, isChecked) {
+        // Send an AJAX request to the server to update selected dishes
+        $.ajax({
+            type: "POST",
+            url: "{% url 'update-selected-dishes' %}",
+            data: {
+                'dish_id': dishId,
+                'is_checked': isChecked
+            },
+            success: function (data) {
+                // You can handle the response if needed
+            }
+        });
+    }
+
+    // Add a click event listener to all checkboxes
+    $('input[type="checkbox"]').on('click', function () {
+        var dishId = $(this).val();
+        var isChecked = $(this).is(':checked');
+        updateSelectedDishes(dishId, isChecked);
+    });
+</script>
+
 
 {% endblock %}
