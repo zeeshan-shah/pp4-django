@@ -26,16 +26,14 @@
         <div class="alert alert-success mt-4">
             <strong>Thank You!</strong>
             <ul>
-            {% for message in messages %}
-                {% if 'contact_us' in message.tags %}
-                <li>{{ message }}</li>
-                {% endif %}
-            {% endfor %}
+                {% for message in messages %}
+                    {% if 'contact_us' in message.tags %}
+                        <li>{{ message }}</li>
+                    {% endif %}
+                {% endfor %}
             </ul>
         </div>
     {% endif %}
-  
-
 
 </div>
 {% endblock %}
