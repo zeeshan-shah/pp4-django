@@ -279,8 +279,8 @@ def order_confirmation_view(request):
 
 def contact_us(request):
     if request.method == 'POST':
-
-        messages.success(request, 'Your message has been sent. We will get back to you soon.', extra_tags='contact_us')
+        sender_name = request.POST.get('name')
+        messages.success(request, f'Thank you, {sender_name}! Your message has been sent. We will get back to you soon.', extra_tags='contact_us')
 
         # Redirect to a thank you page or the same contact page
         return redirect('contact-us')
