@@ -25,7 +25,7 @@ class Customer(models.Model):
 class Dish(models.Model):
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
-    highlight = models.CharField(max_length=200)
+    highlight = models.CharField(max_length=250)
     description = models.TextField()
     image = CloudinaryField('image')
     price = models.DecimalField(max_digits=10, decimal_places=2)

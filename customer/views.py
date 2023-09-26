@@ -5,7 +5,7 @@ from .forms import CustomerDetailsForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.views.decorators.http import require_POST
+# from django.views.decorators.http import require_POST
 from decimal import Decimal
 
 def home(request):
@@ -276,3 +276,13 @@ def order_confirmation_view(request):
     
     return render(request, 'customer/order_confirmation.html', context)
 
+
+def contact_us(request):
+    if request.method == 'POST':
+
+        messages.success(request, 'Your message has been sent. We will get back to you soon.')
+
+        # Redirect to a thank you page or the same contact page
+        return redirect('contact-us')
+
+    return render(request, 'customer/contact_us.html')

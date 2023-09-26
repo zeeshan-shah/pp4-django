@@ -18,7 +18,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#" style="color: #EEEBD0;">Contact Us</a>
+                  <a class="nav-link" href="{% url 'contact-us' %}" style="color: #EEEBD0;">Contact Us</a>
               </li>
               {% if user.is_authenticated %}
               <li class="nav-item">
