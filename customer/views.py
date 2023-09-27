@@ -5,7 +5,6 @@ from .forms import CustomerDetailsForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-# from django.views.decorators.http import require_POST
 from decimal import Decimal
 
 def home(request):
@@ -57,33 +56,33 @@ def customer_details_view(request):
 
 @login_required
 def update_selected_dishes(request):
-    if request.method == 'POST' and request.is_ajax():
-        dish_id = request.POST.get('dish_id')
-        is_checked = request.POST.get('is_checked')
+    if request.method == 'POST': # and request.is_ajax()
+        # dish_id = request.POST.get('dish_id')
+        # is_checked = request.POST.get('is_checked')
         
-        if dish_id and is_checked in ['true', 'false']:
-            dish_id = int(dish_id)
-            is_checked = (is_checked == 'true')
+        # if dish_id and is_checked in ['true', 'false']:
+        #     dish_id = int(dish_id)
+        #     is_checked = (is_checked == 'true')
             
-            # Retrieve the selected dishes from the session
-            selected_dishes = request.session.get('order_details', {}).get('selected_dishes', [])
+        #     # Retrieve the selected dishes from the session
+        #     selected_dishes = request.session.get('order_details', {}).get('selected_dishes', [])
             
-            if is_checked:
-                # If the checkbox is checked, add the dish to selected dishes
-                if dish_id not in selected_dishes:
-                    selected_dishes.append(dish_id)
-            else:
-                # If the checkbox is unchecked, remove the dish from selected dishes
-                if dish_id in selected_dishes:
-                    selected_dishes.remove(dish_id)
+        if is_checked:
+            # If the checkbox is checked, add the dish to selected dishes
+            if dish_id not in selected_dishes:
+                selected_dishes.append(dish_id)
+        else:
+            # If the checkbox is unchecked, remove the dish from selected dishes
+            if dish_id in selected_dishes:
+                selected_dishes.remove(dish_id)
+        
+        # Update the selected dishes in the session
+        request.session['order_details']['selected_dishes'] = selected_dishes
+        request.session.modified = True  # Mark the session as modified
             
-            # Update the selected dishes in the session
-            request.session['order_details']['selected_dishes'] = selected_dishes
-            request.session.modified = True  # Mark the session as modified
-            
-            return JsonResponse({'success': True})
+    #         return JsonResponse({'success': True})
     
-    return JsonResponse({'success': False})
+    # return JsonResponse({'success': False})
 
 
 @login_required
