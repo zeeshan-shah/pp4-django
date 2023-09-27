@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -21,18 +21,18 @@
 
                     <form class="login" method="POST" action="{% url 'account_login' %}">
                         {% csrf_token %}
-                        <div class="form-group">
-                            <label for="{{ form.login.id_for_label }}" class="form-label">{% trans "Username or Email" %}</label>
+                        <div class="mb-3">
+                            <label for="{{ form.login.id_for_label }}" class="form-label">{% trans "Username" %}</label>
                             {{ form.login }}
                         </div>
-                        <div class="form-group">
+                        <div class="mb-3">
                             <label for="{{ form.password.id_for_label }}" class="form-label">{% trans "Password" %}</label>
                             {{ form.password }}
                         </div>
                         {% if redirect_field_value %}
                         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                         {% endif %}
-                        <button class="btn btn-signup btn-block" type="submit">{% trans "Sign In" %}</button>
+                        <button class="btn btn-primary btn-block" type="submit">{% trans "Sign In" %}</button>
                     </form>
                 </div>
             </div>
