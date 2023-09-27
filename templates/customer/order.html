@@ -60,34 +60,5 @@
   </div>
 </div>
 
-<script>
-  $(document).ready(function() {
-    // Add a click event handler for the "Remove" buttons
-    $(".remove-dish").click(function() {
-        var dishId = $(this).data("dish-id"); // Get the dish ID from the data attribute
-        var removeUrl = `/delete/${dishId}/`; // Construct the URL dynamically
 
-        // Send an AJAX POST request to remove the dish
-        $.ajax({
-            type: "POST",
-            url: removeUrl,
-            data: { csrfmiddlewaretoken: csrftoken }, // Include the CSRF token
-            dataType: "json",
-            success: function(response) {
-                if (response.success) {
-                    // If the removal was successful, update the order page
-                    console.log("Dish removed successfully!");
-                    // Reload or update the order page here
-                    location.reload(); // You can reload the page for simplicity
-                } else {
-                    console.log("Dish removal failed.");
-                }
-            },
-            error: function() {
-                console.log("Error occurred during dish removal.");
-            }
-        });
-    });
-});
-</script>
 {% endblock %}
