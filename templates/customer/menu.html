@@ -165,30 +165,7 @@
     </form>
 </div>
 
-<script>
-    // Function to update selected dishes in the session via AJAX
-    function updateSelectedDishes(dishId, isChecked) {
-        // Send an AJAX request to the server to update selected dishes
-        $.ajax({
-            type: "POST",
-            url: "{% url 'update-selected-dishes' %}",
-            data: {
-                'dish_id': dishId,
-                'is_checked': isChecked
-            },
-            success: function (data) {
-                // You can handle the response if needed
-            }
-        });
-    }
 
-    // Add a click event listener to all checkboxes
-    $('input[type="checkbox"]').on('click', function () {
-        var dishId = $(this).val();
-        var isChecked = $(this).is(':checked');
-        updateSelectedDishes(dishId, isChecked);
-    });
-</script>
 
 
 {% endblock %}
