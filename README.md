@@ -138,3 +138,64 @@ python manage.py runserver
 Access the admin interface at http://127.0.0.1:8000/admin/ to add dishes, meal categories, and other data.
 
 Access the user interface at http://127.0.0.1:8000/ to use the ordering system.
+
+
+#### Approached with Jquery to handle delete functionality
+<!-- <script>
+  $(document).ready(function() {
+    // Add a click event handler for the "Remove" buttons
+    $(".remove-dish").click(function() {
+        var dishId = $(this).data("dish-id"); // Get the dish ID from the data attribute
+        var removeUrl = `/delete/${dishId}/`; // Construct the URL dynamically
+
+        // Send an AJAX POST request to remove the dish
+        $.ajax({
+            type: "POST",
+            url: removeUrl,
+            data: { csrfmiddlewaretoken: csrftoken }, // Include the CSRF token
+            dataType: "json",
+            success: function(response) {
+                if (response.success) {
+                    // If the removal was successful, update the order page
+                    console.log("Dish removed successfully!");
+                    // Reload or update the order page here
+                    location.reload(); // You can reload the page for simplicity
+                } else {
+                    console.log("Dish removal failed.");
+                }
+            },
+            error: function() {
+                console.log("Error occurred during dish removal.");
+            }
+        });
+    });
+});
+</script> -->
+
+
+#### Approached with Jquery to handle update functionality
+
+<!-- <script>
+    // Function to update selected dishes in the session via AJAX
+    function updateSelectedDishes(dishId, isChecked) {
+        // Send an AJAX request to the server to update selected dishes
+        $.ajax({
+            type: "POST",
+            url: "{% url 'update-selected-dishes' %}",
+            data: {
+                'dish_id': dishId,
+                'is_checked': isChecked
+            },
+            success: function (data) {
+                // You can handle the response if needed
+            }
+        });
+    }
+
+    // Add a click event listener to all checkboxes
+    $('input[type="checkbox"]').on('click', function () {
+        var dishId = $(this).val();
+        var isChecked = $(this).is(':checked');
+        updateSelectedDishes(dishId, isChecked);
+    });
+</script> -->

@@ -16,4 +16,4 @@ admin.site.register(MealCategory)
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
 
-    list_display = ('name', 'total_price', 'city')
+    list_display = ('created_at', 'name', 'total_price', 'city')
