@@ -54,35 +54,35 @@ def customer_details_view(request):
     
     return render(request, 'customer/customer_details_form.html', {'form': form})
 
-@login_required
-def update_selected_dishes(request):
-    if request.method == 'POST': # and request.is_ajax()
-        # dish_id = request.POST.get('dish_id')
-        # is_checked = request.POST.get('is_checked')
+# @login_required
+# def update_selected_dishes(request):
+#     if request.method == 'POST': # and request.is_ajax()
+#         # dish_id = request.POST.get('dish_id')
+#         # is_checked = request.POST.get('is_checked')
         
-        # if dish_id and is_checked in ['true', 'false']:
-        #     dish_id = int(dish_id)
-        #     is_checked = (is_checked == 'true')
+#         # if dish_id and is_checked in ['true', 'false']:
+#         #     dish_id = int(dish_id)
+#         #     is_checked = (is_checked == 'true')
             
-        #     # Retrieve the selected dishes from the session
-        #     selected_dishes = request.session.get('order_details', {}).get('selected_dishes', [])
+#         #     # Retrieve the selected dishes from the session
+#         #     selected_dishes = request.session.get('order_details', {}).get('selected_dishes', [])
             
-        if is_checked:
-            # If the checkbox is checked, add the dish to selected dishes
-            if dish_id not in selected_dishes:
-                selected_dishes.append(dish_id)
-        else:
-            # If the checkbox is unchecked, remove the dish from selected dishes
-            if dish_id in selected_dishes:
-                selected_dishes.remove(dish_id)
+#         if is_checked:
+#             # If the checkbox is checked, add the dish to selected dishes
+#             if dish_id not in selected_dishes:
+#                 selected_dishes.append(dish_id)
+#         else:
+#             # If the checkbox is unchecked, remove the dish from selected dishes
+#             if dish_id in selected_dishes:
+#                 selected_dishes.remove(dish_id)
         
-        # Update the selected dishes in the session
-        request.session['order_details']['selected_dishes'] = selected_dishes
-        request.session.modified = True  # Mark the session as modified
+#         # Update the selected dishes in the session
+#         request.session['order_details']['selected_dishes'] = selected_dishes
+#         request.session.modified = True  # Mark the session as modified
             
-    #         return JsonResponse({'success': True})
+#     #         return JsonResponse({'success': True})
     
-    # return JsonResponse({'success': False})
+#     # return JsonResponse({'success': False})
 
 
 @login_required
@@ -285,3 +285,22 @@ def contact_us(request):
         return redirect('contact-us')
 
     return render(request, 'customer/contact_us.html')
+
+@login_required
+def customer_profile(request):
+    # Check if the user already has customer details
+    customer = get_object_or_404(Customer, user=request.user)
+    if request.method == 'POST':
+        return redirect('customer-details')
+    else:
+        context = {
+            'name': customer.name,  # Add name to order details
+            'email': customer.email,  # Add email to order details
+            'street': customer.street,
+            'city': customer.city,
+            'state': customer.state,
+            'zipcode': customer.zipcode,
+        }
+
+        return render(request, 'customer/customer_profile.html', context)
+

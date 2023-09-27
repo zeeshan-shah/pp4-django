@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <p><strong>Name:</strong> {{ name }}</p>
+                <p><strong>Email:</strong> {{ email }}</p>
+                <p><strong>Street:</strong> {{ street }}</p>
+                <p><strong>City:</strong> {{ city }}</p>
+                <p><strong>State:</strong> {{ state }}</p>
+                <p><strong>Zipcode:</strong> {{ zipcode }}</p>
+                <div class="text-center">
+                    <a href="{% url 'customer-details' %}" class="btn btn-info">Update Data</a> <!-- Center-aligned button -->
+                </div>        
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
