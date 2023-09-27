@@ -1,3 +1,9 @@
+/* Reset and common styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 body,
 h1,
@@ -8,20 +14,19 @@ p {
     padding: 0;
 }
 
-/* Heading styles */
+/* Heading and text styles */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Crimson Text', serif;
     font-weight: 600;
     font-style: italic;
 }
 
-/* Text styles */
 p, ul, ol, li {
     font-family: 'Courgette', cursive;
     font-weight: 400;
 }
 
-/* Apply a background color to the body */
+/* Body styles */
 body {
     background-color: #0B0B0B;
     color: #EEEBD0; /* Default text color */
@@ -86,13 +91,13 @@ body {
     background-color: #ff784e;
 }
 
-/* Style the navbar */
+/* Navbar styles */
 .navbar {
     background-color: #0B0B0B;
     color: #EEEBD0;
 }
 
-/* Style the navbar brand link */
+/* Navbar brand styles */
 .navbar-brand {
     font-family: 'Dancing Script', cursive;
     font-weight: 700; /* Bold */
@@ -109,20 +114,20 @@ body {
     --bs-navbar-brand-font-size: 50px;
 }
 
-/* Style the navigation links */
+/* Navbar link styles */
 .navbar-nav .nav-link {
     color: #EEEBD0;
     font-size: 20px;
     transition: color 0.3s; /* Add a smooth color transition */
 }
 
-/* Style the active menu link */
+/* Active and hover navbar link styles */
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
     color: #CC2936;
 }
 
-/* Style the page content container */
+/* Container styles */
 .container {
     padding: 20px;
 }
@@ -135,7 +140,7 @@ body {
     padding: 10px;
 }
 
-/* Style buttons */
+/* Button styles */
 .btn {
     background-color: #CC2936;
     color: #EEEBD0;
@@ -150,7 +155,7 @@ body {
     color: #CC2936;
 }
 
-/* Style form inputs */
+/* Form input styles */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -161,7 +166,7 @@ textarea {
     border-radius: 5px;
 }
 
-/* Style form buttons */
+/* Form button styles */
 .form-btn {
     background-color: #CC2936;
     color: #EEEBD0;
@@ -176,15 +181,7 @@ textarea {
     color: #CC2936;
 }
 
-/* Style headings */
-/* h1,
-h2,
-h3 {
-    color: #CC2936;
-    font-weight: bold;
-} */
-
-/* Style links */
+/* Link styles */
 a {
     color: #CC2936;
     text-decoration: none;
@@ -195,13 +192,13 @@ a:hover {
     color: #EEEBD0;
 }
 
-/* Style images */
+/* Image styles */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Style the menu heading */
+/* Menu heading styles */
 .menu-heading {
     font-family: 'Crimson Text', serif;
     font-weight: 600;
@@ -211,7 +208,7 @@ img {
     margin: 100px auto 60px;
 }
 
-/* Style the category heading */
+/* Category heading styles */
 .category-heading {
     font-family: 'Crimson Text', serif;
     font-weight: 600;
@@ -221,20 +218,19 @@ img {
     margin: 40px auto;
 }
 
-
-/* Style each menu item card */
+/* Card styles */
 .card {
     text-align: left;
 }
 
-/* Style the dish checkbox */
+/* Dish checkbox styles */
 .form-check-input {
     transform: scale(1.5);
     border: 2px solid #CC2936;
     border-radius: 3px;
 }
 
-/* Style the dish image */
+/* Dish image styles */
 .card-img-top {
     object-fit: cover;
     overflow: hidden; /* Hide overflowing content (if any) */
@@ -243,7 +239,7 @@ img {
     height: 280px;
 }
 
-/* Style the dish title */
+/* Dish title styles */
 .card-title {
     font-family: 'Crimson Text', serif;
     font-weight: 600;
@@ -258,7 +254,7 @@ img {
     font-size: 30px;
 }
 
-/* Style the dish description */
+/* Dish description styles */
 .card-text {
     font-family: 'Courgette', cursive;
     font-weight: 400;
@@ -267,7 +263,7 @@ img {
     margin: 0;
 }
 
-/* Style the dish price */
+/* Dish price styles */
 .price {
     font-family: 'Courgette', cursive;
     font-weight: bold;
@@ -275,7 +271,7 @@ img {
     color: #CC2936;
 }
 
-/* Style for the custom button */
+/* Custom button styles */
 #custom-btn {
     position: fixed;
     bottom: 10px;
@@ -322,48 +318,55 @@ img {
 
 .carousel-inner {
     padding: 1em;
-  }
-  .card {
+}
+
+.card {
     margin: 0 0.5em;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
-  }
-  .carousel-control-prev,
-  .carousel-control-next {
+}
+
+.carousel-control-prev,
+.carousel-control-next {
     background-color: #e1e1e1;
     width: 6vh;
     height: 6vh;
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
-  }
-  
-  @media (min-width: 768px) {
-    .carousel-item {
-      margin-right: 0;
-      flex: 0 0 33.333333%;
-      display: block;
-    }
-    .carousel-inner {
-      display: flex;
-    }
-  }
-  .card .img-wrapper {
-      max-width: 100%;
-      height: 13em;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-  .card img {
-      max-height: 100%;
-  }
-  @media (max-width: 767px) {
-    .card .img-wrapper {
-      height: 17em;
-    }
-  }
+}
 
+@media (min-width: 768px) {
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+    }
+
+    .carousel-inner {
+        display: flex;
+    }
+}
+
+.card .img-wrapper {
+    max-width: 100%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    max-height: 100%;
+}
+
+@media (max-width: 767px) {
+    .card .img-wrapper {
+        height: 17em;
+    }
+}
+
+/* Footer styles */
 .footer {
     background-color: #0B0B0B;
     color: #EEEBD0;
@@ -402,10 +405,56 @@ img {
 
 /* Additional CSS for sticking the footer to the bottom */
 
-.text-left{
+.text-left {
     text-align: left;
 }
 
-.text-right{
+.text-right {
     text-align: right;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-div {
+    flex: 1;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+    /* Adjust footer padding for mobile screens */
+    .footer {
+        padding: 20px 0;
+    }
+
+    /* Center-align the footer content on mobile screens */
+    .footer .container {
+        text-align: center;
+    }
+
+    /* Reduce font sizes for mobile screens */
+    .footer h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+
+    /* Adjust spacing for social icons on mobile screens */
+    .footer .social-icons {
+        margin-top: 10px;
+    }
+
+    .footer .social-icons li {
+        margin-right: 10px;
+    }
+
+    .footer .social-icons a {
+        font-size: 20px;
+    }
 }
