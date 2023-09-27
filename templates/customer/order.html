@@ -3,10 +3,10 @@
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 mt-5">
       <div class="card mb-4">
         {% if selected_dishes %}
-        <div class="card-body">
+        <div class="card-body card-content">
           <h1 class="card-title card-heading">Order Details</h1>
 
           <h4>Your Order Summary:</h4>
@@ -22,10 +22,10 @@
 
           <h4>Total Price: ${{ order.total_price|floatformat:2 }}</h4>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mt-2">
               <a href="{% url 'menu' %}" class="btn btn-primary btn-block">Update Order</a>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mt-2">
               <form method="post" action="{% url 'order-confirmation' %}">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-success btn-block">Confirm Order</button>
@@ -34,16 +34,16 @@
           </div>
         </div>
         {% else %}
-        <div class="card-body">
+        <div class="card-body card-content">
           <h1 class="card-title card-heading">Your Cart is Empty</h1>
         </div>
         {% endif %}
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 mt-5">
       <div class="card p-4"> <!-- Added padding -->
-        <div class="card-body">
+        <div class="card-body card-content">
           <h1 class="card-title card-heading">Delivery Information</h1>
           <!-- Apply custom CSS for larger text and center-aligned button -->
           <p class="delivery-info"><strong>Name:</strong> {{ order.name }}</p>
