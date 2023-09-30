@@ -5,6 +5,8 @@ from django.utils.text import slugify
 
 
 class MealCategory(models.Model):
+    """Model representing meal categories."""
+
     name = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
@@ -12,6 +14,8 @@ class MealCategory(models.Model):
 
 
 class Customer(models.Model):
+    """Model representing customers."""
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=15)
     email = models.EmailField(unique=True)
@@ -25,6 +29,8 @@ class Customer(models.Model):
 
 
 class Dish(models.Model):
+    """Model representing dishes."""
+
     name = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     highlight = models.CharField(max_length=250)
@@ -38,6 +44,8 @@ class Dish(models.Model):
 
 
 class Order(models.Model):
+    """Model representing customer orders."""
+
     created_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.ForeignKey(Customer, on_delete=models.CASCADE)
