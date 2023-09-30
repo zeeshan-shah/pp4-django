@@ -15,7 +15,7 @@ import os
 import dj_database_url
 
 if os.path.isfile("env.py"):
-   import env
+    import env
 
 development = os.environ.get('DEVELOPMENT', False)
 
@@ -33,8 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-ALLOWED_HOSTS = ['8000-zeeshanshah-pp4django-pbt4as1kyf8.ws-eu104.gitpod.io', 'pp4-django-43b291f3bcf7.herokuapp.com']
-
+ALLOWED_HOSTS = ['8000-zeeshanshah-pp4django-pbt4as1kyf8.ws-eu105.gitpod.io',
+                 'pp4-django-43b291f3bcf7.herokuapp.com']
 
 
 # Application definition
@@ -109,7 +109,7 @@ WSGI_APPLICATION = 'online_restaurant.wsgi.application'
 # }
 
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
