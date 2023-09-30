@@ -46,7 +46,6 @@ body {
     background-position: center;
 }
 
-
 .overlay {
     position: absolute;
     top: 0;
@@ -155,9 +154,7 @@ body {
     color: #CC2936;
 }
 
-
 /* Login Form */
-
 #id_login, 
 #id_password,
 #id_username,
@@ -171,7 +168,6 @@ body {
     font-size: 16px;
     color: #333;
 }
-
 
 /* Form input styles */
 input[type="text"],
@@ -378,18 +374,6 @@ img {
     transform: translateY(-50%);
 }
 
-@media (min-width: 768px) {
-    .carousel-item {
-        margin-right: 0;
-        flex: 0 0 33.333333%;
-        display: block;
-    }
-
-    .carousel-inner {
-        display: flex;
-    }
-}
-
 .card .img-wrapper {
     max-width: 100%;
     height: 13em;
@@ -400,12 +384,6 @@ img {
 
 .card img {
     max-height: 100%;
-}
-
-@media (max-width: 767px) {
-    .card .img-wrapper {
-        height: 17em;
-    }
 }
 
 /* Footer styles */
@@ -445,7 +423,6 @@ img {
     color: #EEEBD0;
 }
 
-
 .text-left {
     text-align: left;
 }
@@ -465,6 +442,24 @@ img {
 }
 
 /* Media Queries */
+@media (min-width: 767px) {
+    .carousel-item {
+        margin-right: 0;
+        flex: 0 0 33.333333%;
+        display: block;
+    }
+
+    .carousel-inner {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .card .img-wrapper {
+        height: 17em;
+    }
+}
+
 @media (max-width: 767px) {
     /* Adjust footer padding for mobile screens */
     .footer {
