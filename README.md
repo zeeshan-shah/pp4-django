@@ -1,4 +1,16 @@
+# TastyBites: Your Culinary Adventure
 
+Welcome to TastyBites, where food meets technology in the most delightful way! 🍔📱
+
+Are you ready to embark on a culinary journey that combines mouthwatering dishes with a seamless digital experience? Look no further! Our app offers an innovative way to explore our menu, place orders, and enjoy a hassle-free dining experience, whether you're in the restaurant or ordering from the comfort of your home.
+
+With a user-friendly interface, real-time updates, and a rich selection of dishes, your culinary desires are just a click away. Whether you're a hungry customer looking to satisfy your cravings or an admin ready to manage your restaurant's offerings, TastyBites has you covered.
+
+Explore the world of TastyBites, where delicious food and cutting-edge technology converge to bring you a dining experience like no other.
+
+The live link for TastyBites can be found [HERE](https://pp4-django-43b291f3bcf7.herokuapp.com/).
+
+Let's dive in and discover the features, functionalities, and the mouthwatering menu that awaits you!
 
 ## User Stories
 
@@ -42,6 +54,12 @@
 ### Contacting Support
 
 -    As a user, I want the ability to contact customer support or make inquiries using a contact form.
+
+## Design
+
+![Menu Wireframe](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/wireframe1_pmm7zt.jpg)
+
+![Cart Wireframe](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/wireframe2_c9smdh.jpg)
 
 
 ## Features
@@ -95,6 +113,7 @@ You can access a live demo of the application [TastyBites](https://pp4-django-43
 
 ## Technologies Used
 
+- Python
 - Django
 - PostgreSQL (for database)
 - Cloudinary (for image storage)
@@ -104,40 +123,190 @@ You can access a live demo of the application [TastyBites](https://pp4-django-43
 
 ## Setup Instructions
 
-To run the project locally, follow these steps:
+1. Install Django and gunicorn:
 
-1. Clone the repository:
+    ```bash
+    pip3 install 'django<4' gunicorn
+    ```
 
-   ```bash
-   git clone https://github.com/<github_repo>.git
-   cd <project_name>
+2. Install supporting libraries:
 
-Create a virtual environment and activate it:
+    ```bash
+    pip3 install dj_database_url==0.5.0 psycopg2
+    ```
 
-`python -m venv venv`
-`source venv/bin/activate`  # On Windows, use `venv\Scripts\activate`
+3. Install Cloudinary Libraries:
 
-Install the project dependencies:
+    ```bash
+    pip3 install dj3-cloudinary-storage
+    pip3 install urllib3==1.26.15
+    ```
 
-`pip install -r requirements.txt`
+4. Create a requirements file:
 
-Create a PostgreSQL database and update the database settings in <project_name>/settings.py.
+    ```bash
+    pip3 freeze --local > requirements.txt
+    ```
 
-Apply migrations to create the database tables:
+5. Create your project (replace `PROJ_NAME` with your project name):
 
-python manage.py makemigrations
-python manage.py migrate
+    ```bash
+    django-admin startproject PROJ_NAME .
+    ```
 
-Create a superuser account for admin access:
+    (Don’t forget the period `.` at the end.)
 
-python manage.py createsuperuser
+6. Create an app (replace `APP_NAME` with your app name):
 
-Start the development server:
-python manage.py runserver
+    ```bash
+    python3 manage.py startapp APP_NAME
+    ```
 
-Access the admin interface at http://127.0.0.1:8000/admin/ to add dishes, meal categories, and other data.
+7. Add your app to the installed apps in `settings.py`:
 
-Access the user interface at http://127.0.0.1:8000/ to use the ordering system.
+    ```python
+    INSTALLED_APPS = [
+        …
+        'APP_NAME',
+    ]
+    ```
+
+    Save the file.
+
+8. Migrate the changes:
+
+    ```bash
+    python3 manage.py migrate
+    ```
+
+9. Run the server to test:
+
+    ```bash
+    python3 manage.py runserver
+    ```
+
+## Step 2: Deploying an App to Heroku
+
+Follow these 5 stages to deploy your app to Heroku:
+
+1. Create a new external database:
+
+   - Log in to your ElephantSQL account.
+   - If you don't have an ElephantSQL.com account yet, create one.
+   - Click “Create New Instance”.
+   - Set up your plan and give it a name.
+   - Select the Tiny Turtle (Free) plan.
+   - Select a data center near you.
+   - Click “Review” and then “Create instance”.
+   - Copy your ElephantSQL database URL using the Copy icon (it will start with postgres://).
+
+2. Create a new Heroku app:
+
+   - Name it (e.g., `APP_NAME`).
+   - Set the location to Europe.
+
+3. Attach the database:
+
+   - Open the settings tab.
+   - Click "Reveal Config Vars".
+   - Add a Config Var called `DATABASE_URL` with the value being the ElephantSQL database URL you copied.
+
+4. Prepare your environment and `settings.py` file:
+
+   - Create a new `env.py` file on the top-level directory (e.g., `env.py`).
+   - Import the `os` library and set environment variables.
+   - Add your secret key to `os.environ["SECRET_KEY"]`.
+
+     ```python
+     os.environ["DATABASE_URL"] = "Paste in ElephantSQL database URL"
+     os.environ["SECRET_KEY"] = "Make up your own randomSecretKey"
+     ```
+
+   - Reference `env.py` in your project settings.
+   - Replace the old `DATABASES` section with the new one that links to `DATABASE_URL` on Heroku.
+
+5. Update static and media file settings:
+
+   - Configure Django to use Cloudinary for media and static files.
+   - Add your Cloudinary URL and other required settings to `env.py`.
+   - Set up the Cloudinary libraries in the `INSTALLED_APPS` list.
+
+6. Add your Heroku hostname to `ALLOWED_HOSTS` in the `settings.py` file.
+
+7. Add, commit, and push your changes to your Git repository.
+
+8. Deploy your content manually through Heroku, for example, using GitHub as the deployment method.
+
+That's it! Your Django project should now be set up and deployed on Heroku.
+
+
+## CRUD Operations in My Project
+
+In my project, I utilize CRUD operations, which stand for Create, Read, Update, and Delete. These operations are fundamental for managing data within the application. Below, I'll explain each operation as it relates to my project.
+
+### Create (C)
+
+### Creating a New Dish
+
+As an admin, I have the capability to add new dishes to my restaurant's menu.
+The process involves navigating to the admin dashboard, where I can access the dish creation form.
+I input essential details such as the dish name, description, price, and image.
+Upon submission, a new dish entry is created in the database, and it becomes visible on the menu.
+
+### Adding a Customer Profile
+
+Customers can create their profiles, providing necessary information like their name, email, and address for delivery.
+This information is stored in the database, allowing customers to have personalized experiences.
+
+### Read (R)
+
+### Viewing the Menu
+
+Users, both admin and customers, can access the menu page, which presents a comprehensive list of available dishes.
+They can see crucial information, including dish names, descriptions, prices, and images.
+This operation allows users to retrieve information about available menu items without modifying the data.
+
+### Checking Order Details
+
+Customers can review the details of their orders on the order summary page.
+They have visibility into the names and prices of the dishes they've selected, as well as the total order price.
+This transparency assists customers in reviewing their selections before finalizing their orders.
+
+### Viewing the Customer Profile
+
+Registered users can view their entered data on their customer profile page.
+This includes details like their name, email, and address, which they provided during registration.
+Users can access this information as needed.
+
+### Update (U)
+
+### Modifying Dish Information
+
+As an admin, I can make adjustments to dish details if they change or require corrections.
+Accessing the edit form for a specific dish allows me to update any of its attributes.
+After making changes, I can save the updates, ensuring that my menu remains current and accurate.
+
+### Editing User Profile
+
+Registered users have the privilege of updating their profile information.
+They can modify fields such as their name, email, and address by accessing the profile edit page.
+Once changes are made, users can save the updated data, keeping their account information current.
+
+### Delete (D)
+
+### Removing Dishes
+
+Admins possess the authority to remove dishes from the menu when necessary.
+By selecting the delete option for a dish, confirming the action, and confirming, admins can remove dishes from the database.
+This operation is beneficial for eliminating dishes that are no longer offered on the menu.
+
+### Canceling Orders
+
+Customers have the flexibility to remove selected dishes from their cart or cancel entire orders.
+This allows users to empty their cart if they change their minds or encounter issues before confirming their orders.
+
+These CRUD operations serve as the foundation for managing data and user interactions within my project, ensuring efficient data management and a seamless user experience.
+
 
 
 #### Approached with Jquery to handle delete functionality
