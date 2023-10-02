@@ -7,17 +7,17 @@
         <!-- Dish Image -->
         <div class="col-md-6 mb-4">
             {% if dish.image %}
-                <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="img-fluid rounded">
+                <img src="{{ dish.image.url }}" alt="{{ dish.name }}" class="img-fluid rounded" aria-label="{{ dish.name }} Image">
             {% endif %}
         </div>
         <!-- Dish Details Card -->
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h1 class="card-title">{{ dish.name }}</h1>
-                    <p class="card-text"><strong>Category:</strong> {{ dish.categories }}</p>
-                    <p class="card-text"><strong>Description:</strong> {{ dish.description|linebreaksbr }}</p>
-                    <p class="card-text"><strong>Price:</strong> ${{ dish.price }}</p>
+                    <h1 class="card-title" aria-label="{{ dish.name }} Title">{{ dish.name }}</h1>
+                    <p class="card-text"><strong>Category:</strong> <span aria-label="Dish Category">{{ dish.categories }}</span></p>
+                    <p class="card-text"><strong>Description:</strong> <span aria-label="Dish Description">{{ dish.description|linebreaksbr }}</span></p>
+                    <p class="card-text"><strong>Price:</strong> <span aria-label="Dish Price">${{ dish.price }}</span></p>
                 </div>
             </div>
         </div>

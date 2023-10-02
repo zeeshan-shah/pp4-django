@@ -7,15 +7,15 @@
         <div class="col-md-6">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h1 class="card-title card-heading">Customer Profile</h1>
-                    <p class="card-text"><strong>Name:</strong> {{ name }}</p>
-                    <p class="card-text"><strong>Email:</strong> {{ email }}</p>
-                    <p class="card-text"><strong>Street:</strong> {{ street }}</p>
-                    <p class="card-text"><strong>City:</strong> {{ city }}</p>
-                    <p class="card-text"><strong>State:</strong> {{ state }}</p>
-                    <p class="card-text"><strong>Zipcode:</strong> {{ zipcode }}</p>
+                    <h1 class="card-title card-heading" aria-label="Customer Profile Title">Customer Profile</h1>
+                    <p class="card-text"><strong aria-label="Name Label">Name:</strong> {{ name }}</p>
+                    <p class="card-text"><strong aria-label="Email Label">Email:</strong> {{ email }}</p>
+                    <p class="card-text"><strong aria-label="Street Label">Street:</strong> {{ street }}</p>
+                    <p class="card-text"><strong aria-label="City Label">City:</strong> {{ city }}</p>
+                    <p class="card-text"><strong aria-label="State Label">State:</strong> {{ state }}</p>
+                    <p class="card-text"><strong aria-label="Zipcode Label">Zipcode:</strong> {{ zipcode }}</p>
                     <div class="text-center">
-                        <a href="{% url 'customer-details' %}" class="btn btn-info">Update Data</a>
+                        <a href="{% url 'customer-details' %}" class="btn btn-info" aria-label="Update Data Button">Update Data</a>
                     </div>
                 </div>
             </div>

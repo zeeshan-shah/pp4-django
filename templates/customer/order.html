@@ -16,7 +16,7 @@
             <li>{{ dish.name }} - ${{ dish.price }}</li>
             <form method="post" action="{% url 'delete_selected_dishes' dish.id %}">
               {% csrf_token %}
-              <button type="submit">Remove</button>
+              <button type="submit" aria-label="Remove {{ dish.name }} from order">Remove</button>
             </form>
             {% endfor %}
           </ul>
@@ -24,12 +24,12 @@
           <h4>Total Price: ${{ order.total_price|floatformat:2 }}</h4>
           <div class="row">
             <div class="col-md-6 mt-2">
-              <a href="{% url 'menu' %}" class="btn btn-primary btn-block">Update Order</a>
+              <a href="{% url 'menu' %}" class="btn btn-primary btn-block" aria-label="Update Order">Update Order</a>
             </div>
             <div class="col-md-6 mt-2">
               <form method="post" action="{% url 'order-confirmation' %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-success btn-block">Confirm Order</button>
+                <button type="submit" class="btn btn-success btn-block" aria-label="Confirm Order">Confirm Order</button>
               </form>
             </div>
           </div>
@@ -54,7 +54,7 @@
           <p class="delivery-info"><strong>State:</strong> {{ order.state }}</p>
           <p class="delivery-info"><strong>Zipcode:</strong> {{ order.zipcode }}</p>
           <div class="text-center">
-            <a href="{% url 'customer-details' %}" class="btn btn-info">Update Data</a> <!-- Center-aligned button -->
+            <a href="{% url 'customer-details' %}" class="btn btn-info" aria-label="Update Customer Data">Update Data</a> <!-- Center-aligned button -->
           </div>
         </div>
       </div>

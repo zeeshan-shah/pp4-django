@@ -7,12 +7,12 @@
         <div class="col-md-6 offset-md-3 mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">Customer Details</h3>
+                    <h3 class="card-title" aria-label="Customer Details Title">Customer Details</h3>
                     
                     <form method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button class="btn btn-primary btn-block" type="submit">Save Details</button>
+                        <button class="btn btn-primary btn-block" type="submit" aria-label="Save Details Button">Save Details</button>
                     </form>
                 </div>
             </div>
