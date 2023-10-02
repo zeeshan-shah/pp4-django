@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-md-8">
@@ -23,7 +24,7 @@
           <p><strong>State:</strong> {{ order.state }}</p>
           <p><strong>Zipcode:</strong> {{ order.zipcode }}</p>
 
-          <div class="mt-4"> 
+          <div class="mt-4">
             <h3>Total Price: ${{ order.total_price }}</h3>
           </div>
         </div>
@@ -31,4 +32,5 @@
     </div>
   </div>
 </div>
+
 {% endblock %}

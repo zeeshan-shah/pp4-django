@@ -2,11 +2,15 @@
 {% load static %}
 
 {% block navbar %}
+
 <div class="container-home">
     <a class="navbar-brand-home" href="{% url 'menu' %}">TastyBites</a>
 </div>
+
 {% endblock %}
+
 {% block content %}
+
     <div class="background-image">
         <div class="overlay"></div>
         <div class="content">
@@ -15,4 +19,5 @@
             <a href="{% url 'menu' %}" class="btn">Explore Our Menu</a>
         </div>
     </div>
+
 {% endblock %}
