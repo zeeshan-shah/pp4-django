@@ -82,7 +82,6 @@ Let's dive in and discover the features, functionalities, and the mouthwatering 
 
 - *Future Implementation:* As an admin, I want to generate order reports for a specified time period, including order volume and revenue.
 
-
 ## Design
 
 ### Menu Page:
