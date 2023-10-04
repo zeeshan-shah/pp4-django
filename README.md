@@ -2,6 +2,8 @@
 
 Welcome to TastyBites, where food meets technology in the most delightful way! 🍔📱
 
+![Am I Responsive](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/am-i-responsive_xahqyr.jpg)
+
 Are you ready to embark on a culinary journey that combines mouthwatering dishes with a seamless digital experience? Look no further! Our app offers an innovative way to explore our menu, place orders, and enjoy a hassle-free dining experience, whether you're in the restaurant or ordering from the comfort of your home.
 
 With a user-friendly interface, real-time updates, and a rich selection of dishes, your culinary desires are just a click away. Whether you're a hungry customer looking to satisfy your cravings or an admin ready to manage your restaurant's offerings, TastyBites has you covered.
@@ -14,52 +16,110 @@ Let's dive in and discover the features, functionalities, and the mouthwatering 
 
 ## User Stories
 
-
 ### User Registration and Authentication
 
--   As a new user, I want to be able to register an account with my name, email, and password, so I can access the ordering system.
+- As a new user, I want to be able to register an account with my name, email, and password, so I can access the ordering system.
 
--    As a registered user, I want to be able to log in with my email and password to access my account and place orders.
+- As a registered user, I want to be able to log in with my email and password to access my account and place orders.
 
 ### Browsing and Selecting Dishes
 
--    As a user, I want to see a list of dishes with their names and prices when I visit the website's menu page.
+- As a user, I want to see a list of dishes with their names and prices when I visit the website's menu page.
 
--    As a user, I want to be able to filter dishes by categories (e.g., appetizers, main courses) to easily find the type of dishes I want.
+- As a user, I want to be able to filter dishes by categories (e.g., appetizers, main courses) to easily find the type of dishes I want.
 
--    As a user, I want to click on a dish to view its details, including a description and an option to add it to my order.
+- As a user, I want to click on a dish to view its details, including a description and an option to add it to my order.
 
 ### Creating and Managing Orders
 
--    As a user, I want to be able to select multiple dishes by checking checkboxes next to each dish, so I can add them to my order collectively by     clicking the "Place Order" button.
+- As a user, I want to be able to select multiple dishes by checking checkboxes next to each dish, so I can add them to my order collectively by clicking the "Place Order" button.
 
--    As a user, I want to see a summary of my order, including the selected dishes and the total price, before confirming it.
+- As a user, I want to see a summary of my order, including the selected dishes and the total price, before confirming it.
 
--    As a user, I want the ability to remove a dish from my order if I change my mind.
+- As a user, I want the ability to remove a dish from my order if I change my mind.
 
--    As a user, I want to be able to update my order and add or remove dishes before confirming it.
+- As a user, I want to be able to update my order and add or remove dishes before confirming it.
 
 ### Delivery Information
 
--    As a user, I want to provide and update my delivery information, including my name, email, street address, city, state, and zip code.
+- As a user, I want to provide and update my delivery information, including my name, email, street address, city, state, and zip code.
 
--    As a user, I want to be able to access and update my delivery information from my account profile.
+- As a user, I want to be able to access and update my delivery information from my account profile.
 
 ### Confirming Orders
 
--    As a user, I want to be able to confirm my order by clicking a "Confirm Order" button and receive confirmation of my order placement.
+- As a user, I want to be able to confirm my order by clicking a "Confirm Order" button and receive confirmation of my order placement.
 
--    As a user, I want to receive an email confirmation with details of my order after confirming it.
+- As a user, I want to receive an email confirmation with details of my order after confirming it.
 
 ### Contacting Support
 
--    As a user, I want the ability to contact customer support or make inquiries using a contact form.
+- As a user, I want the ability to contact customer support or make inquiries using a contact form.
+
+## Admin User Stories
+
+### Admin Dashboard
+
+- As an admin, I want access to a dedicated admin dashboard where I can manage the restaurant's menu and orders.
+
+- As an admin, I want to log in using my unique admin credentials to access the admin dashboard.
+
+### Managing Menu
+
+- As an admin, I want to be able to add new dishes to the menu by providing details such as dish name, description, price, and image.
+
+- As an admin, I want to edit existing dish information, including name, description, price, and image, to keep the menu up-to-date.
+
+- As an admin, I want the ability to delete dishes from the menu that are no longer offered.
+
+### Managing Orders
+
+- As an admin, I want to view and manage incoming orders in real-time, including order details, customer information, and order status.
+
+- *Future Implementation:* As an admin, I want to update the order status to indicate whether an order is pending, preparing, out for delivery, or completed.
+
+- *Future Implementation:* As an admin, I want to send order confirmation emails to customers after an order is confirmed.
+
+- *Future Implementation:* As an admin, I want to generate order reports for a specified time period, including order volume and revenue.
+
 
 ## Design
 
+### Menu Page:
+
 ![Menu Wireframe](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/wireframe1_pmm7zt.jpg)
 
+### Cart Page:
+
 ![Cart Wireframe](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/wireframe2_c9smdh.jpg)
+
+### Typography
+
+- **Font Selection:** TastyBites employs a combination of fonts to create a visually appealing and engaging experience. Headings (h1 to h6) use the elegant 'Crimson Text' font with a weight of 600 and an italic style, while paragraphs (p) and other text elements feature the cursive 'Courgette' font with a weight of 400.
+
+- **Font Sizes:** The project carefully selects font sizes to establish a clear visual hierarchy. Larger fonts, such as those used for headings, capture attention and guide users, while smaller fonts, ideal for body text, enhance readability.
+
+### Imagery
+
+- **Background Image:** TastyBites features a captivating background image that sets the mood for the website. The background is a high-quality photograph of delicious cuisine, making users eager to explore the menu.
+
+- **Overlay:** An overlay with a semi-transparent background (rgba(0, 0, 0, 0.5)) adds sophistication to the design, making the foreground content stand out while maintaining readability.
+
+- **Content Styling:** The content within the overlay is centered both horizontally and vertically (positioned using `transform`) to ensure a visually pleasing layout. The text is presented in white to contrast with the overlay and background image.
+
+- **Font Styles:** Typography choices, such as font size and style, complement the overall aesthetics. The 'title' uses a font size of 3rem to create prominence, while the 'description' employs a font size of 1.5rem for clarity.
+
+- **Navbar Styles:** The navigation bar (navbar) features a dark background color (#0B0B0B) with contrasting white text (#EEEBD0). The 'navbar-brand' font utilizes the cursive 'Dancing Script' font with a weight of 700 for a touch of elegance.
+
+- **Custom Button Styles:** Buttons on the site are designed with a bold background color (#CC2936) and white text (#FFFFCC). On hover, the background color changes to a lighter shade while maintaining contrast.
+
+- **Card Styles:** Dish cards within the menu section are thoughtfully designed with attention to detail. The images within the cards have a max height to ensure consistency and aesthetic appeal. The card content is aligned to the left to create a clean, organized look.
+
+- **Footer Styles:** The footer section adopts a dark background color (#0B0B0B) with white text (#EEEBD0) for a cohesive design. Social icons are displayed with a subtle hover effect, adding interactivity and accessibility.
+
+- **Media Queries:** To ensure a responsive design, media queries are used to adjust styles based on screen size. This guarantees that the typography and imagery remain visually pleasing across various devices.
+
+The combination of carefully selected typography and captivating imagery in TastyBites contributes to an inviting and immersive user experience, enticing visitors to explore the world of culinary delights.
 
 
 ## Features
@@ -68,27 +128,48 @@ Let's dive in and discover the features, functionalities, and the mouthwatering 
    - Users can register for an account and log in securely.
    - Authentication ensures that only logged-in users can access certain features.
 
+![User Login](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/user-login_q4wn7w.jpg)
+
 2. **Menu Display:**
    - Users can view a menu with various categories of dishes, including starters, main courses, desserts, and drinks.
 
+![Menu Display](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/menu_zeblqw.jpg)
+
 3. **Dish Details:**
    - Users can click on a dish to view its details, including a description, price, and an image.
+
+![Dish Detail](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/dish-detail_m17kwd.jpg)
 
 4. **Order Management:**
    - Users can select multiple dishes by checking checkboxes next to each dish.
    - The selected dishes are stored temporarily until the user decides to place an order.
 
+![Order Management](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/select-dishes_grybll.jpg)
+
 5. **Customer Details:**
    - Users can provide and update their delivery information, including name, email, street, city, state, and zipcode.
+
+![Customer Details](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/delivery-detail_nxyf1z.jpg)
+
+![Update Customer Details](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/customer-update_ohfdq5.jpg)
+
 
 6. **Real-time Updates:**
    - Changes to the selected dishes are updated in real-time, allowing users to see their order summary.
 
+![Update Order](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/order-detail_mtqqch.jpg)
+
 7. **Order Confirmation:**
    - Users can confirm their order, which includes a summary of selected dishes and delivery information.
 
+![Order Confirmation](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/order-confirmation_zk4gsg.jpg)
+
 8. **Contact Us:**
    - Users can send inquiries or messages to the business through the "Contact Us" feature.
+
+![Contact Us Form](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/contact-us1_zbq7ko.jpg)
+
+![Contact Us Confirmation](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/contact-us2_z55w3m.jpg)
 
 9. **Data Persistence:**
    - User data, including customer details and orders, is stored securely in a database.
@@ -111,11 +192,91 @@ These features make your app a user-friendly platform for browsing, selecting, a
 
 You can access a live demo of the application [TastyBites](https://pp4-django-43b291f3bcf7.herokuapp.com/).
 
+## CRUD Operations in My Project
+
+In my project, I utilize CRUD operations, which stand for Create, Read, Update, and Delete. These operations are fundamental for managing data within the application. Below, I'll explain each operation as it relates to my project.
+
+### Create (C)
+
+### Creating a New Dish
+
+As an admin, I have the capability to add new dishes to my restaurant's menu.
+The process involves navigating to the admin dashboard, where I can access the dish creation form.
+I input essential details such as the dish name, description, price, and image.
+Upon submission, a new dish entry is created in the database, and it becomes visible on the menu.
+
+### Adding a Customer Profile
+
+Customers can create their profiles, providing necessary information like their name, email, and address for delivery.
+This information is stored in the database, allowing customers to have personalized experiences.
+
+### Read (R)
+
+### Viewing the Menu
+
+Users, both admin and customers, can access the menu page, which presents a comprehensive list of available dishes.
+They can see crucial information, including dish names, descriptions, prices, and images.
+This operation allows users to retrieve information about available menu items without modifying the data.
+
+### Checking Order Details
+
+Customers can review the details of their orders on the order summary page.
+They have visibility into the names and prices of the dishes they've selected, as well as the total order price.
+This transparency assists customers in reviewing their selections before finalizing their orders.
+
+### Viewing the Customer Profile
+
+Registered users can view their entered data on their customer profile page.
+This includes details like their name, email, and address, which they provided during registration.
+Users can access this information as needed.
+
+### Update (U)
+
+### Modifying Dish Information
+
+As an admin, I can make adjustments to dish details if they change or require corrections.
+Accessing the edit form for a specific dish allows me to update any of its attributes.
+After making changes, I can save the updates, ensuring that my menu remains current and accurate.
+
+### Editing User Profile
+
+Registered users have the privilege of updating their profile information.
+They can modify fields such as their name, email, and address by accessing the profile edit page.
+Once changes are made, users can save the updated data, keeping their account information current.
+
+### Delete (D)
+
+### Removing Dishes
+
+Admins possess the authority to remove dishes from the menu when necessary.
+By selecting the delete option for a dish, confirming the action, and confirming, admins can remove dishes from the database.
+This operation is beneficial for eliminating dishes that are no longer offered on the menu.
+
+### Canceling Orders
+
+Customers have the flexibility to remove selected dishes from their cart or cancel entire orders.
+This allows users to empty their cart if they change their minds or encounter issues before confirming their orders.
+
+These CRUD operations serve as the foundation for managing data and user interactions within my project, ensuring efficient data management and a seamless user experience.
+
+## Testing
+
+| Issue | Description | Resolution |
+|-------|-------------|------------|
+| 1     | Changes in Dish Model | The addition of the `slug` field to the Dish model caused issues for dishes created before this change. To resolve this, the database was wiped entirely, and migrations were recreated. This ensured that all dishes had a valid `slug` field. |
+| 2     | Template Loading | Templates placed in subfolders were not loading properly. The issue was resolved by updating the `TEMPLATES` setting in `settings.py` to include the correct template path, including subfolders (e.g., `'TEMPLATES_DIR'` and `BASE_DIR / 'templates' / 'customer'`). |
+| 3     | Footer Position | The footer was not fixed to the bottom of the page as intended. This issue was addressed by wrapping the footer content in an additional `<div>` container and applying CSS styles to achieve the desired fixed position. |
+| 4     | Carousel Behavior | Initially, jQuery was included for carousel functionality in the menu page. However, a bug was discovered where the carousel for one category of dishes affected others when clicking the next or previous button. This unintended behavior made it challenging to navigate the menu efficiently. To resolve this issue, an alternative and simplified solution was found on the internet, improving the independence of carousel behavior for different dish categories. |
+| 5     | Contact Us Form | The contact form was displaying all alert messages instead of specifically showing the successful message confirmation. To resolve this, conditional statements were added to display the appropriate message based on form submission. |
+| 6     | Checkbox Behavior | Checkboxes in the menu were resetting to their default unchecked state when users returned to the menu from the cart to update their order selection. To address this, code was added to the menu page to track previously checked checkboxes, ensuring users could see their selections while updating their orders. |
+| 7     | JavaScript Loading | An error was observed in the development tool console tab. Upon troubleshooting, it was identified that the error was due to the unnecessary loading of JavaScript code using `{% load static %}` in all HTML templates, even when JavaScript was only required for the `menu.html` template for carousel functionality. To address this, a `{% block extra_scripts %}` was introduced to include JavaScript code only in templates where it is needed, eliminating the error. |
+
+
 ## Technologies Used
 
 - Python
 - Django
-- PostgreSQL (for database)
+- ElephantSQL (for database)
 - Cloudinary (for image storage)
 - HTML, CSS, JavaScript
 - Bootstrap (for styling)
@@ -238,133 +399,3 @@ Follow these 5 stages to deploy your app to Heroku:
 8. Deploy your content manually through Heroku, for example, using GitHub as the deployment method.
 
 That's it! Your Django project should now be set up and deployed on Heroku.
-
-
-## CRUD Operations in My Project
-
-In my project, I utilize CRUD operations, which stand for Create, Read, Update, and Delete. These operations are fundamental for managing data within the application. Below, I'll explain each operation as it relates to my project.
-
-### Create (C)
-
-### Creating a New Dish
-
-As an admin, I have the capability to add new dishes to my restaurant's menu.
-The process involves navigating to the admin dashboard, where I can access the dish creation form.
-I input essential details such as the dish name, description, price, and image.
-Upon submission, a new dish entry is created in the database, and it becomes visible on the menu.
-
-### Adding a Customer Profile
-
-Customers can create their profiles, providing necessary information like their name, email, and address for delivery.
-This information is stored in the database, allowing customers to have personalized experiences.
-
-### Read (R)
-
-### Viewing the Menu
-
-Users, both admin and customers, can access the menu page, which presents a comprehensive list of available dishes.
-They can see crucial information, including dish names, descriptions, prices, and images.
-This operation allows users to retrieve information about available menu items without modifying the data.
-
-### Checking Order Details
-
-Customers can review the details of their orders on the order summary page.
-They have visibility into the names and prices of the dishes they've selected, as well as the total order price.
-This transparency assists customers in reviewing their selections before finalizing their orders.
-
-### Viewing the Customer Profile
-
-Registered users can view their entered data on their customer profile page.
-This includes details like their name, email, and address, which they provided during registration.
-Users can access this information as needed.
-
-### Update (U)
-
-### Modifying Dish Information
-
-As an admin, I can make adjustments to dish details if they change or require corrections.
-Accessing the edit form for a specific dish allows me to update any of its attributes.
-After making changes, I can save the updates, ensuring that my menu remains current and accurate.
-
-### Editing User Profile
-
-Registered users have the privilege of updating their profile information.
-They can modify fields such as their name, email, and address by accessing the profile edit page.
-Once changes are made, users can save the updated data, keeping their account information current.
-
-### Delete (D)
-
-### Removing Dishes
-
-Admins possess the authority to remove dishes from the menu when necessary.
-By selecting the delete option for a dish, confirming the action, and confirming, admins can remove dishes from the database.
-This operation is beneficial for eliminating dishes that are no longer offered on the menu.
-
-### Canceling Orders
-
-Customers have the flexibility to remove selected dishes from their cart or cancel entire orders.
-This allows users to empty their cart if they change their minds or encounter issues before confirming their orders.
-
-These CRUD operations serve as the foundation for managing data and user interactions within my project, ensuring efficient data management and a seamless user experience.
-
-
-
-#### Approached with Jquery to handle delete functionality
-<!-- <script>
-  $(document).ready(function() {
-    // Add a click event handler for the "Remove" buttons
-    $(".remove-dish").click(function() {
-        var dishId = $(this).data("dish-id"); // Get the dish ID from the data attribute
-        var removeUrl = `/delete/${dishId}/`; // Construct the URL dynamically
-
-        // Send an AJAX POST request to remove the dish
-        $.ajax({
-            type: "POST",
-            url: removeUrl,
-            data: { csrfmiddlewaretoken: csrftoken }, // Include the CSRF token
-            dataType: "json",
-            success: function(response) {
-                if (response.success) {
-                    // If the removal was successful, update the order page
-                    console.log("Dish removed successfully!");
-                    // Reload or update the order page here
-                    location.reload(); // You can reload the page for simplicity
-                } else {
-                    console.log("Dish removal failed.");
-                }
-            },
-            error: function() {
-                console.log("Error occurred during dish removal.");
-            }
-        });
-    });
-});
-</script> -->
-
-
-#### Approached with Jquery to handle update functionality
-
-<!-- <script>
-    // Function to update selected dishes in the session via AJAX
-    function updateSelectedDishes(dishId, isChecked) {
-        // Send an AJAX request to the server to update selected dishes
-        $.ajax({
-            type: "POST",
-            url: "{% url 'update-selected-dishes' %}",
-            data: {
-                'dish_id': dishId,
-                'is_checked': isChecked
-            },
-            success: function (data) {
-                // You can handle the response if needed
-            }
-        });
-    }
-
-    // Add a click event listener to all checkboxes
-    $('input[type="checkbox"]').on('click', function () {
-        var dishId = $(this).val();
-        var isChecked = $(this).is(':checked');
-        updateSelectedDishes(dishId, isChecked);
-    });
-</script> -->
