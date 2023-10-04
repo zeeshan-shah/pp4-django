@@ -93,6 +93,10 @@ Let's dive in and discover the features, functionalities, and the mouthwatering 
 
 ![Cart Wireframe](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/wireframe2_c9smdh.jpg)
 
+### Database Schema:
+
+![Database Schema](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/database-scheme_zaoyxv.jpg)
+
 ### Typography
 
 - **Font Selection:** TastyBites employs a combination of fonts to create a visually appealing and engaging experience. Headings (h1 to h6) use the elegant 'Crimson Text' font with a weight of 600 and an italic style, while paragraphs (p) and other text elements feature the cursive 'Courgette' font with a weight of 400.
@@ -426,4 +430,3 @@ Follow these 5 stages to deploy your app to Heroku:
 8. Deploy your content manually through Heroku, for example, using GitHub as the deployment method.
 
 That's it! Your Django project should now be set up and deployed on Heroku.
-
