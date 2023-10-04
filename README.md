@@ -271,6 +271,33 @@ These CRUD operations serve as the foundation for managing data and user interac
 | 6     | Checkbox Behavior | Checkboxes in the menu were resetting to their default unchecked state when users returned to the menu from the cart to update their order selection. To address this, code was added to the menu page to track previously checked checkboxes, ensuring users could see their selections while updating their orders. |
 | 7     | JavaScript Loading | An error was observed in the development tool console tab. Upon troubleshooting, it was identified that the error was due to the unnecessary loading of JavaScript code using `{% load static %}` in all HTML templates, even when JavaScript was only required for the `menu.html` template for carousel functionality. To address this, a `{% block extra_scripts %}` was introduced to include JavaScript code only in templates where it is needed, eliminating the error. |
 
+### Validator Testing
+
+#### W3C Validator
+
+##### Home Page
+
+![Validate Home Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker1_kwaovq.jpg)
+
+##### Menu Page
+
+![Validate Menu Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker2_pm0vjr.jpg)
+
+##### Cart Page
+
+![Validate Cart Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker3_gtt3bv.jpg)
+
+##### Contact Us Page
+
+![Validate Contact Us Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker4_ckylqy.jpg)
+
+
+#### Jigsaw Validator
+
+CSS files pass through the Jigsaw validator with no issues found.
+
+![Validate CSS](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/css-checker_kdyfac.jpg)
+
 
 ## Technologies Used
 
@@ -399,3 +426,4 @@ Follow these 5 stages to deploy your app to Heroku:
 8. Deploy your content manually through Heroku, for example, using GitHub as the deployment method.
 
 That's it! Your Django project should now be set up and deployed on Heroku.
+
