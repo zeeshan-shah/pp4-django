@@ -52,7 +52,8 @@ class Order(models.Model):
     items = models.ManyToManyField(Dish)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
 
-    # Fetch email, street, city, state, and zipcode from the related Customer instance
+    # Fetch email, street, city, state, and zipcode from
+    # the related Customer instance
     email = models.EmailField(editable=False, default='example@example.com')
     street = models.CharField(max_length=100, editable=False)
     city = models.CharField(max_length=100, editable=False)
