@@ -4,7 +4,7 @@ Welcome to TastyBites, where food meets technology in the most delightful way! ð
 
 ![Am I Responsive](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/am-i-responsive_xahqyr.jpg)
 
-Are you ready to embark on a culinary journey that combines mouthwatering dishes with a seamless digital experience? Look no further! Our app offers an innovative way to explore our menu, place orders, and enjoy a hassle-free dining experience, whether you're in the restaurant or ordering from the comfort of your home.
+Are you ready to embark on a culinary journey that combines mouthwatering dishes with a seamless digital experience? Look no further! My app offers an innovative way to explore my menu, place orders, and enjoy a hassle-free dining experience, whether you're in the restaurant or ordering from the comfort of your home.
 
 With a user-friendly interface, real-time updates, and a rich selection of dishes, your culinary desires are just a click away. Whether you're a hungry customer looking to satisfy your cravings or an admin ready to manage your restaurant's offerings, TastyBites has you covered.
 
@@ -94,7 +94,7 @@ Let's dive in and discover the features, functionalities, and the mouthwatering 
 
 ### Database Schema:
 
-![Database Schema](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/database-scheme_zaoyxv.jpg)
+![Database Schema](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/database-scheme_gflun5.jpg)
 
 ### Typography
 
@@ -155,7 +155,6 @@ The combination of carefully selected typography and captivating imagery in Tast
 ![Customer Details](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/delivery-detail_nxyf1z.jpg)
 
 ![Update Customer Details](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/customer-update_ohfdq5.jpg)
-
 
 6. **Real-time Updates:**
    - Changes to the selected dishes are updated in real-time, allowing users to see their order summary.
@@ -452,3 +451,27 @@ Follow these 5 stages to deploy your app to Heroku:
 8. Deploy your content manually through Heroku, for example, using GitHub as the deployment method.
 
 That's it! Your Django project should now be set up and deployed on Heroku.
+
+## Credits
+
+I would like to acknowledge the contributions and efforts of the following individuals and organizations that made TastyBites possible:
+
+- **[Zeeshan Shah]** - Project Developer
+- **[Lauren Nicole]** - Mentor
+- **[Code Institute]** - Tutors and Student Support
+
+## Acknowledgments
+
+I extend my gratitude to the following libraries, tools, and resources that played a significant role in the development of TastyBites:
+
+- **Django** - The high-level Python web framework that powered my backend.
+- **Bootstrap** - The responsive front-end framework that made my app look great on all devices.
+- **Cloudinary** - The cloud-based image management solution that helped me store and serve images seamlessly.
+- **ElephantSQL** - The PostgreSQL database hosting service that ensured my data was safe and accessible.
+- **Heroku** - The cloud platform that allowed me to deploy and host my application.
+- **GitHub** - The version control platform that facilitated collaboration among my tutors and mentor.
+- **Lighthouse** - The web performance and quality auditing tool that helped me optimize my app.
+- **W3C Validator** - The tool that ensured my HTML code met web standards.
+- **PEP8 Linter** - The tool that helped me maintain clean and consistent Python code.
+
+Thank you to everyone who contributed directly or indirectly to the success of TastyBites!
