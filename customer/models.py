@@ -18,7 +18,7 @@ class Customer(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=15)
-    email = models.EmailField(unique=True)
+    email = models.EmailField()
     street = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
@@ -52,15 +52,17 @@ class Order(models.Model):
     items = models.ManyToManyField(Dish)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
 
-    # Fetch street, city, state, and zipcode from the related Customer instance
+    # Fetch email, street, city, state, and zipcode from the related Customer instance
+    email = models.EmailField(editable=False, default='example@example.com')
     street = models.CharField(max_length=100, editable=False)
     city = models.CharField(max_length=100, editable=False)
     state = models.CharField(max_length=100, editable=False)
     zipcode = models.CharField(max_length=10, editable=False)
 
     def save(self, *args, **kwargs):
-        # Fetch street, city, state, and zipcode
+        # Fetch email, street, city, state, and zipcode
         # from the related Customer instance
+        self.email = self.name.email
         self.street = self.name.street
         self.city = self.name.city
         self.state = self.name.state
