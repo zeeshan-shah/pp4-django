@@ -187,7 +187,7 @@ The combination of carefully selected typography and captivating imagery in Tast
     - Agile development practices were followed during the project, promoting collaboration and flexibility.
 
 13. **GitHub Kanban Board:**
-    - A GitHub Kanban board was used for project management, making it easier to track and manage tasks.
+    - A GitHub Kanban board was used for project management, making it easier to track and manage tasks. The link to the [Project Kanban Board](https://github.com/users/zeeshan-shah/projects/3).
 
 These features make your app a user-friendly platform for browsing, selecting, and confirming food orders. Users can conveniently manage their orders and delivery details, ensuring a smooth and enjoyable experience.
 
@@ -262,7 +262,7 @@ This allows users to empty their cart if they change their minds or encounter is
 
 These CRUD operations serve as the foundation for managing data and user interactions within my project, ensuring efficient data management and a seamless user experience.
 
-## Testing
+## Bugs Handling
 
 | Issue | Description | Resolution |
 |-------|-------------|------------|
@@ -273,33 +273,56 @@ These CRUD operations serve as the foundation for managing data and user interac
 | 5     | Contact Us Form | The contact form was displaying all alert messages instead of specifically showing the successful message confirmation. To resolve this, conditional statements were added to display the appropriate message based on form submission. |
 | 6     | Checkbox Behavior | Checkboxes in the menu were resetting to their default unchecked state when users returned to the menu from the cart to update their order selection. To address this, code was added to the menu page to track previously checked checkboxes, ensuring users could see their selections while updating their orders. |
 | 7     | JavaScript Loading | An error was observed in the development tool console tab. Upon troubleshooting, it was identified that the error was due to the unnecessary loading of JavaScript code using `{% load static %}` in all HTML templates, even when JavaScript was only required for the `menu.html` template for carousel functionality. To address this, a `{% block extra_scripts %}` was introduced to include JavaScript code only in templates where it is needed, eliminating the error. |
+| 8     | Contrast Error Shown by Wave (Browser Extension) | Wave, a browser extension, detected contrast errors in the color choices of the website. However, these color choices are intentional as part of the design. No changes were made to address this issue, as it aligns with the project's design choices and industry standards for similar color combinations. |
+| 9     | Missing Form Labels | Wave identified missing form labels for select dishes in the form. To address this, form labels were added to enhance accessibility and comply with best practices for web forms. |
 
-### Validator Testing
+## Validator Testing
 
-#### W3C Validator
+In this section, I validate my project against various standards and linting tools to ensure code quality and adherence to web standards.
 
-##### Home Page
+### W3C Validator
+
+#### Home Page
+
+I use the W3C Validator to check the HTML of my Home Page. The screenshot below shows the results with all-clear validation.
 
 ![Validate Home Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker1_kwaovq.jpg)
 
-##### Menu Page
+#### Menu Page
+
+The W3C Validator is employed to verify the HTML of my Menu Page. The screenshot demonstrates successful validation.
 
 ![Validate Menu Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker2_pm0vjr.jpg)
 
-##### Cart Page
+#### Cart Page
+
+I utilize the W3C Validator to validate the HTML of my Cart Page. The screenshot exhibits a successful validation process.
 
 ![Validate Cart Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker3_gtt3bv.jpg)
 
-##### Contact Us Page
+#### Contact Us Page
+
+The HTML of my Contact Us Page undergoes validation using the W3C Validator. The screenshot confirms the successful validation.
 
 ![Validate Contact Us Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/html-checker4_ckylqy.jpg)
 
+### PEP8 Linter
 
-#### Jigsaw Validator
+All Python files in my project pass the PEP8 linter, ensuring consistent and readable code.
 
-CSS files pass through the Jigsaw validator with no issues found.
+![Validate Contact Us Page](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/pep8-linter_l3zman.jpg)
+
+### Jigsaw Validator
+
+My CSS files pass through the Jigsaw validator without any issues, ensuring CSS code quality.
 
 ![Validate CSS](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/css-checker_kdyfac.jpg)
+
+### Lighthouse Test
+
+I conduct a Lighthouse test to assess the performance, accessibility, best practices, SEO, and Progressive Web App (PWA) aspects of my project.
+
+![Lighthouse Test](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/lighthouse-test_lj1nce.jpg)
 
 
 ## Technologies Used
