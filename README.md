@@ -556,4 +556,15 @@ I extend my gratitude to the following libraries, tools, and resources that play
 - **W3C Validator** - The tool that ensured my HTML code met web standards.
 - **PEP8 Linter** - The tool that helped me maintain clean and consistent Python code.
 
+## Attribution
+
+The [Javascript Code](https://github.com/zeeshan-shah/pp4-django/blob/main/static/js/script.js)was developed with reference to the insights and guidance provided by an external source.
+
+**Source Information:**
+- **Title:** Bootstrap 5 Carousel Multiple Items
+- **Author:** Codingyaar
+- **URL:** [Bootstrap 5 Carousel Multiple Items Tutorial](https://codingyaar.com/bootstrap-carousel-multiple-items-increment-by-1/)
+
+For detailed information and original content, please consult the [source](https://codingyaar.com/bootstrap-carousel-multiple-items-increment-by-1/).
+
 Thank you to everyone who contributed directly or indirectly to the success of TastyBites!
