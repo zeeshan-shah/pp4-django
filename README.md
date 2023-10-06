@@ -94,7 +94,7 @@ Let's dive in and discover the features, functionalities, and the mouthwatering 
 
 ### Database Schema:
 
-![Database Schema](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/database-scheme_gflun5.jpg)
+![Database Schema](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/database-scheme_dbymsv.jpg)
 
 ### Typography
 
@@ -344,7 +344,7 @@ These CRUD operations serve as the foundation for managing data and user interac
 | 4     | Carousel Behavior | Initially, jQuery was included for carousel functionality in the menu page. However, a bug was discovered where the carousel for one category of dishes affected others when clicking the next or previous button. This unintended behavior made it challenging to navigate the menu efficiently. To resolve this issue, an alternative and simplified solution was found on the internet, improving the independence of carousel behavior for different dish categories. |
 | 5     | Contact Us Form | The contact form was displaying all alert messages instead of specifically showing the successful message confirmation. To resolve this, conditional statements were added to display the appropriate message based on form submission. |
 | 6     | Checkbox Behavior | Checkboxes in the menu were resetting to their default unchecked state when users returned to the menu from the cart to update their order selection. To address this, code was added to the menu page to track previously checked checkboxes, ensuring users could see their selections while updating their orders. |
-| 7     | JavaScript Loading | An error was observed in the development tool console tab. Upon troubleshooting, it was identified that the error was due to the unnecessary loading of JavaScript code using `{% load static %}` in all HTML templates, even when JavaScript was only required for the `menu.html` template for carousel functionality. To address this, a `{% block extra_scripts %}` was introduced to include JavaScript code only in templates where it is needed, eliminating the error. |
+| 7     | JavaScript Loading | An error was observed in the development tool console tab. Upon troubleshooting, it was identified that the error was due to the unnecessary loading of JavaScript code using {% load static %} in all HTML templates, even when JavaScript was only required for the `menu.html` template for carousel functionality. To address this, a {% block extra_scripts %} was introduced to include JavaScript code only in templates where it is needed, eliminating the error. |
 | 8     | Contrast Error Shown by Wave (Browser Extension) | Wave, a browser extension, detected contrast errors in the color choices of the website. However, these color choices are intentional as part of the design. No changes were made to address this issue, as it aligns with the project's design choices and industry standards for similar color combinations. |
 | 9     | Missing Form Labels | Wave identified missing form labels for select dishes in the form. To address this, form labels were added to enhance accessibility and comply with best practices for web forms. |
 
