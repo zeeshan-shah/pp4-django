@@ -1,3 +1,14 @@
+/*
+  This code was developed with reference to the insights and guidance provided by an external source.
+
+  Source Information:
+  - Title:  Bootstrap 5 Carousel Multiple Items 
+  - Author: Codingyaar
+  - URL: https://codingyaar.com/bootstrap-carousel-multiple-items-increment-by-1/
+  
+  For detailed information and original content, please consult the source.
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
   // Function to initialize a carousel
   function initializeCarousel(carouselId) {
