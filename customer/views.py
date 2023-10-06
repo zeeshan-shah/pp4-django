@@ -85,9 +85,6 @@ def customer_details_view(request):
     # # Check if the user already has a customer profile
     customer, create = Customer.objects.get_or_create(user=request.user)
 
-    # Check if the user already has customer details
-    # customer = get_object_or_404(Customer, user=request.user)
-
     if request.method == 'POST':
         form = CustomerDetailsForm(request.POST, instance=customer)
         if form.is_valid():
@@ -272,8 +269,6 @@ def cart_view(request):
     selected_dishes = Dish.objects.filter(
         pk__in=order_details['selected_dishes'])
 
-    # email = order_details['email']
-
     order = Order(
         user=request.user,
         name_id=order_details['customer_id'],
@@ -284,8 +279,6 @@ def cart_view(request):
         state=order_details['state'],
         zipcode=order_details['zipcode'],
     )
-
-    # order.email = email
 
     context = {
         'order': order,
