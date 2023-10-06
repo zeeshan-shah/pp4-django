@@ -124,6 +124,13 @@ Let's dive in and discover the features, functionalities, and the mouthwatering 
 
 The combination of carefully selected typography and captivating imagery in TastyBites contributes to an inviting and immersive user experience, enticing visitors to explore the world of culinary delights.
 
+### Color Scheme
+
+TastyBites incorporates a harmonious color palette to evoke the essence of fine dining and culinary excellence.
+
+![Color Scheme](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/color-scheme_gqabyb.jpg)
+
+Source: [Coolors](https://coolors.co/)
 
 ## Features
 
@@ -200,7 +207,7 @@ In my project, I utilize CRUD operations, which stand for Create, Read, Update, 
 
 ### Create (C)
 
-### Creating a New Dish
+#### Creating a New Dish
 
 As an admin, I have the capability to add new dishes to my restaurant's menu.
 The process involves navigating to the admin dashboard, where I can access the dish creation form.
@@ -223,7 +230,7 @@ Upon submission, a new dish entry is created in the database, and it becomes vis
 
 ![Save](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/dish-add4_rkh6pk.jpg)
 
-### Adding a Customer Profile
+#### Adding a Customer Profile
 
 Customers can create their profiles, providing necessary information like their name, email, and address for delivery.
 This information is stored in the database, allowing customers to have personalized experiences.
@@ -243,7 +250,7 @@ This information is stored in the database, allowing customers to have personali
 
 ### Read (R)
 
-### Viewing the Menu
+#### Viewing the Menu
 
 Users, both admin and customers, can access the menu page, which presents a comprehensive list of available dishes.
 They can see crucial information, including dish names, descriptions, prices, and images.
@@ -256,7 +263,7 @@ This operation allows users to retrieve information about available menu items w
 ![View Menu](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/menu-view_kbvusg.jpg)
 
 
-### Checking Order Details
+#### Checking Order Details
 
 Customers can review the details of their orders on the order summary page.
 They have visibility into the names and prices of the dishes they've selected, as well as the total order price.
@@ -266,7 +273,7 @@ This transparency assists customers in reviewing their selections before finaliz
 
 ![View Cart](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/order-view_nyxgb1.jpg)
 
-### Viewing the Customer Profile
+#### Viewing the Customer Profile
 
 Registered users can view their entered data on their customer profile page.
 This includes details like their name, email, and address, which they provided during registration.
@@ -280,13 +287,13 @@ Users can access this information as needed.
 
 ### Update (U)
 
-### Modifying Dish Information
+#### Modifying Dish Information
 
 As an admin, I can make adjustments to dish details if they change or require corrections.
 Accessing the edit form for a specific dish allows me to update any of its attributes.
 After making changes, I can save the updates, ensuring that my menu remains current and accurate.
 
-### Editing User Profile
+#### Editing User Profile
 
 Registered users have the privilege of updating their profile information.
 They can modify fields such as their name, email, and address by accessing the profile edit page.
@@ -308,7 +315,7 @@ Once changes are made, users can save the updated data, keeping their account in
 
 ### Delete (D)
 
-### Removing Dishes
+#### Removing Dishes
 
 Admins possess the authority to remove dishes from the menu when necessary.
 By selecting the delete option for a dish, confirming the action, and confirming, admins can remove dishes from the database.
@@ -316,7 +323,7 @@ This operation is beneficial for eliminating dishes that are no longer offered o
 
 ![Delete Dish](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/delete-dish_e83ffu.jpg)
 
-### Removing Selected Dishes
+#### Removing Selected Dishes
 
 Customers have the flexibility to remove selected dishes from their cart or cancel entire orders.
 This allows users to empty their cart if they change their minds or encounter issues before confirming their orders.
@@ -333,7 +340,6 @@ These CRUD operations serve as the foundation for managing data and user interac
 
 ![Updated Cart](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/delete-selected-dish2_qksp1l.jpg)
 
-
 ## Bugs Handling
 
 | Issue | Description | Resolution |
@@ -344,13 +350,12 @@ These CRUD operations serve as the foundation for managing data and user interac
 | 4     | Carousel Behavior | Initially, jQuery was included for carousel functionality in the menu page. However, a bug was discovered where the carousel for one category of dishes affected others when clicking the next or previous button. This unintended behavior made it challenging to navigate the menu efficiently. To resolve this issue, an alternative and simplified solution was found on the internet, improving the independence of carousel behavior for different dish categories. |
 | 5     | Contact Us Form | The contact form was displaying all alert messages instead of specifically showing the successful message confirmation. To resolve this, conditional statements were added to display the appropriate message based on form submission. |
 | 6     | Checkbox Behavior | Checkboxes in the menu were resetting to their default unchecked state when users returned to the menu from the cart to update their order selection. To address this, code was added to the menu page to track previously checked checkboxes, ensuring users could see their selections while updating their orders. |
-| 7     | JavaScript Loading | An error was observed in the development tool console tab. Upon troubleshooting, it was identified that the error was due to the unnecessary loading of JavaScript code using {% load static %} in all HTML templates, even when JavaScript was only required for the `menu.html` template for carousel functionality. To address this, a {% block extra_scripts %} was introduced to include JavaScript code only in templates where it is needed, eliminating the error. |
+| 7     | JavaScript Loading | An error was observed in the development tool console tab. Upon troubleshooting, it was identified that the error was due to the unnecessary loading of JavaScript code using `{% load static %}` in all HTML templates, even when JavaScript was only required for the `menu.html` template for carousel functionality. To address this, a `{% block extra_scripts %}` was introduced to include JavaScript code only in templates where it is needed, eliminating the error. |
 | 8     | Contrast Error Shown by Wave (Browser Extension) | Wave, a browser extension, detected contrast errors in the color choices of the website. However, these color choices are intentional as part of the design. No changes were made to address this issue, as it aligns with the project's design choices and industry standards for similar color combinations. |
 | 9     | Missing Form Labels | Wave identified missing form labels for select dishes in the form. To address this, form labels were added to enhance accessibility and comply with best practices for web forms. |
 | 10    | GitHub Commits Syntax Errors | Some GitHub commits displayed a red cross sign, indicating syntax errors, specifically the error description: "Liquid Exception: Liquid syntax error (line 347): Unknown tag 'load' in README.md and also some other syntax errors." These errors were resolved by correcting the syntax errors in the README.md file, ensuring proper Markdown formatting. 
 ![Commit Error](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/commit-errors_esgbfq.jpg)
-![Commit Error Detail](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/commit-errors2_kpsuew.jpg)
- |
+![Commit Error Detail](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/commit-errors2_kpsuew.jpg)|
 | 11    | GitHub Deployment Error | Attempting to deploy the Django project directly on GitHub led to error alerts. The project was undeployed from GitHub. The reason for not deploying a Django project on GitHub is that GitHub is primarily a platform for version control and code collaboration, not a hosting service for web applications. Django projects are best deployed on specialized platforms like Heroku or dedicated web servers that support Python and Django, ensuring proper functionality and security. GitHub Pages, which is designed for static websites, may not support the dynamic components and database requirements of Django applications, leading to deployment issues. |
 
 ## Validator Testing
@@ -400,7 +405,6 @@ My CSS files pass through the Jigsaw validator without any issues, ensuring CSS 
 I conduct a Lighthouse test to assess the performance, accessibility, best practices, SEO, and Progressive Web App (PWA) aspects of my project.
 
 ![Lighthouse Test](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/lighthouse-test_lj1nce.jpg)
-
 
 ## Technologies Used
 
@@ -476,7 +480,7 @@ I conduct a Lighthouse test to assess the performance, accessibility, best pract
     python3 manage.py runserver
     ```
 
-## Step 2: Deploying an App to Heroku
+### Step 2: Deploying an App to Heroku
 
 Follow these 5 stages to deploy your app to Heroku:
 
