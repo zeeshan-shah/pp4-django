@@ -194,7 +194,7 @@ These features make your app a user-friendly platform for browsing, selecting, a
 
 You can access a live demo of the application [TastyBites](https://pp4-django-43b291f3bcf7.herokuapp.com/).
 
-## CRUD Operations in My Project
+## CRUD Operations in My Project & It's Testing
 
 In my project, I utilize CRUD operations, which stand for Create, Read, Update, and Delete. These operations are fundamental for managing data within the application. Below, I'll explain each operation as it relates to my project.
 
@@ -207,10 +207,39 @@ The process involves navigating to the admin dashboard, where I can access the d
 I input essential details such as the dish name, description, price, and image.
 Upon submission, a new dish entry is created in the database, and it becomes visible on the menu.
 
+-> Login into Admin Console 
+
+![Admin Console](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/dish-add_n0kphj.jpg)
+
+-> Dish Model (in Customer Section)
+
+![Dish Model](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/dish-add2_dyxkph.jpg)
+
+-> Add Dish Details
+ 
+![Dish Details](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/dish-add3_xso8pd.jpg)
+
+-> Save 
+
+![Save](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/dish-add4_rkh6pk.jpg)
+
 ### Adding a Customer Profile
 
 Customers can create their profiles, providing necessary information like their name, email, and address for delivery.
 This information is stored in the database, allowing customers to have personalized experiences.
+
+-> Register a new Account
+
+![Register a new Account](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/customer-profile1_jidfmk.jpg)
+![Account Details](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/customer-profile2_ewyu9w.jpg)
+
+-> Fill out Customer Details Form
+
+![Customer Details Form](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/customer-profile3_bcbpal.jpg)
+
+-> Profile
+
+![Customer Profile](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/customer-profile4_o1ixhu.jpg)
 
 ### Read (R)
 
@@ -220,17 +249,34 @@ Users, both admin and customers, can access the menu page, which presents a comp
 They can see crucial information, including dish names, descriptions, prices, and images.
 This operation allows users to retrieve information about available menu items without modifying the data.
 
+-> Go to [TastyBites](https://pp4-django-43b291f3bcf7.herokuapp.com/)
+
+-> Menu
+
+![View Menu](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/menu-view_kbvusg.jpg)
+
+
 ### Checking Order Details
 
 Customers can review the details of their orders on the order summary page.
 They have visibility into the names and prices of the dishes they've selected, as well as the total order price.
 This transparency assists customers in reviewing their selections before finalizing their orders.
 
+-> Go to [TastyBites](https://pp4-django-43b291f3bcf7.herokuapp.com/) -> Menu -> Select some dishes -> Click Place Order
+
+![View Cart](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/order-view_nyxgb1.jpg)
+
 ### Viewing the Customer Profile
 
 Registered users can view their entered data on their customer profile page.
 This includes details like their name, email, and address, which they provided during registration.
 Users can access this information as needed.
+
+-> Go to [TastyBites](https://pp4-django-43b291f3bcf7.herokuapp.com/) 
+
+-> Profile
+
+![View Profile](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/customer-profile4_o1ixhu.jpg)
 
 ### Update (U)
 
@@ -246,6 +292,20 @@ Registered users have the privilege of updating their profile information.
 They can modify fields such as their name, email, and address by accessing the profile edit page.
 Once changes are made, users can save the updated data, keeping their account information current.
 
+-> Go to [TastyBites](https://pp4-django-43b291f3bcf7.herokuapp.com/) 
+
+-> Profile
+
+![Update Profile](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/update-profile_mlizir.jpg)
+
+-> Update the relevant data and click Save Details
+
+![Update Profile](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/update-profile2_wq2cfa.jpg)
+
+->Updated Profile
+
+![Update Profile](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/update-profile3_lafff5.jpg)
+
 ### Delete (D)
 
 ### Removing Dishes
@@ -254,12 +314,25 @@ Admins possess the authority to remove dishes from the menu when necessary.
 By selecting the delete option for a dish, confirming the action, and confirming, admins can remove dishes from the database.
 This operation is beneficial for eliminating dishes that are no longer offered on the menu.
 
-### Canceling Orders
+![Delete Dish](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/delete-dish_e83ffu.jpg)
+
+### Removing Selected Dishes
 
 Customers have the flexibility to remove selected dishes from their cart or cancel entire orders.
 This allows users to empty their cart if they change their minds or encounter issues before confirming their orders.
 
 These CRUD operations serve as the foundation for managing data and user interactions within my project, ensuring efficient data management and a seamless user experience.
+
+-> Go to [TastyBites](https://pp4-django-43b291f3bcf7.herokuapp.com/) 
+
+-> Cart -> Click on Remove Button
+
+![Delete Item](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/delete-selected-dish_au3urd.jpg)
+
+-> Updated Cart
+
+![Updated Cart](https://res.cloudinary.com/db2fhoogx/image/upload/v1234567/delete-selected-dish2_qksp1l.jpg)
+
 
 ## Bugs Handling
 
